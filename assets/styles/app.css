@@ -557,39 +557,52 @@ video {
   display: none;
 }
 
-.btn {
-  border-radius: 0.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.table {
+  display: table;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.hidden {
+  display: none;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #27272a;
+  color: #f8fafc;
 }
 
 .test {
   color: red;
+}
+
+header h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 1em;
+}
+
+nav ul li {
+  font-size: 1.25em;
+  background-color: #71717a;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+nav ul li:hover {
+  background-color: #4a4a4a;
+  box-shadow: 0 0 10px 0 #09090b;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5em;
 }

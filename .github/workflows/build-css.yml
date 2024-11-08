@@ -1,0 +1,39 @@
+name: Build and Deploy CSS to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Run this action whenever you push to the main branch
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Install dependencies (assuming a Node-based CSS build setup)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.5.1'
+
+      - name: Install dependencies
+        run: npm install
+
+      # Build CSS (assuming you have a build script in your package.json)
+      - name: Build CSS
+        run: npm run build-css  # This depends on the specific build command you're using
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public  # Replace with the directory containing your built files
+

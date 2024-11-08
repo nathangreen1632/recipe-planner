@@ -1,0 +1,16 @@
+{
+  "name": "recipe-planner",
+  "version": "1.0.0",
+  "main": "./public/index.html",
+ "scripts": {
+    "build-css": "tailwindcss build -i ./src/styles/app.css -o ./public/assets/styles/app.css",
+    "watch-css": "tailwindcss build -i ./src/styles/app.css -o ./public/assets/styles/app.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}

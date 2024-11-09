@@ -4,7 +4,7 @@ export const data = [{
 }];
 
 const recipesArray = [{
-    recipeingredientName: "Cajun Chicken Pasta",
+    recipeName: "Cajun Chicken Pasta",
     description: "This creamy Cajun chicken pasta with bell peppers and mushrooms is easy to make, full of spicy flavor, and ready to eat in 30 minutes. Perfect for busy weeknights!",
     ingredients: [
         {ingredientName: "Fettuccine pasta", quantity: "8", unitOfMeasure: "oz"},

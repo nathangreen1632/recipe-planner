@@ -31,11 +31,11 @@
       <br>
 
       <section>
-        <button id="add-recipe-btn">+ Recipe</button>
+        <div id="add-recipe-btn-container"><button id="add-recipe-btn">+ Recipe</button></div>
         <div id="recipe-modal" class="modal hidden">
-          <h2>Add New Recipe</h2>
+          <h2>Add a New Recipe</h2>
           <form id="recipe-form">
-            <label fpr="recipe-name">Recipe Name:</label>
+            <label for="recipe-name">Recipe Name:</label>
             <input type="text" id="recipe-name" name="recipeName" required>
             <label for="recipe-description">Description:</label>
 
@@ -56,7 +56,7 @@
             <label for="recipe-image">Image URL:</label>
             <input type="url" id="recipe-image" name="mealImage" required>
             <label for="difficulty-level">Difficulty Level:</label>
-            <select id="difficulty-level" name="difficultyLevel" required>
+            <select id="difficulty-level" name="difficultyLevel" class="form-control" required>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
@@ -69,7 +69,7 @@
             <label for="servings">Servings:</label>
             <input type="number" id="servings" name="servings" required>
             <label for="category">Category:</label>
-            <select id="category" name="categorySelection" required>
+            <select id="category" name="categorySelection" class="form-control" required>
               <option value="appetizer">Appetizer</option>
               <option value="main">Main course</option>
               <option value="dessert">Dessert</option>
@@ -77,8 +77,6 @@
 
             <label for="cuisine">Cuisine:</label>
             <input type="text" id="cuisine" name="cuisine" required>
-            <label for="date-added">Date Added (MM-DD-YYYY):</label>
-            <input type="date" id="date-added" name="dateAdded" required>
             <label for="source">Source URL:</label>
             <input type="url" id="source" name="source" required>
 

@@ -4,18 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Recipe Planner</title>
-  <link rel="stylesheet" href="./public/assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/styles/app.css">
 </head>
 <body>
   <header>
       <h1>The Recipe Planner</h1>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./planner.html">Planner</a></li>
+          <li><a href="./grocery-list.html">Grocery List</a></li>
+        </ul>
+      </nav>
   </header>
+
   <main>
     <section>
       <h2>Need a quick meal, play Food Roulette!</h2>
       <button id="random-meal-btn">Meal Roulette</button>
       </section>
+
       <br>
+
+      <section>
+        <button id="add-recipe-btn">+ Recipe</button>
+        <div id="recipe-modal" class="modal hidden">
+          <h2>Add New Recipe</h2>
+          <form id="recipe-form">
+            <label fpr="recipe-name">Recipe Name:</label>
+            <input type="text" id="recipe-name" name="recipeName" required>
+            <label for="recipe-description">Description:</label>
+
+            <textarea id="recipe-description" name="description" required></textarea>
+
+            <h3>Ingredients</h3>
+            <div id="ingredient-list">
+              </div>
+            <button type="button" id="add-ingredient-btn">+ Ingredient</button>
+
+            <h3>Instructions</h3>
+            <div id="instruction-list">
+              </div>
+            <button type="button" id="add-instruction-btn">+ Instruction</button>
+
+            <br>
+            <label for="recipe-image">Image URL:</label>
+            <input type="url" id="recipe-image" name="mealImage" required>
+            <label for="difficulty-level">Difficulty Level:</label>
+            <select id="difficulty-level" name="difficultyLevel" required>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+            
+            <label for="prep-time">Prep Time (minutes):</label>
+            <input type="number" id="prep-time" name="prepTime" required>
+            <label for="cook-time">Cook Time (minutes):</label>
+            <input type="number" id="cook-time" name="cookTime" required>
+            <label for="servings">Servings:</label>
+            <input type="number" id="servings" name="servings" required>
+            <label for="category">Category:</label>
+            <select id="category" name="categorySelection" required>
+              <option value="appetizer">Appetizer</option>
+              <option value="main">Main course</option>
+              <option value="dessert">Dessert</option>
+            </select>
+
+            <label for="cuisine">Cuisine:</label>
+            <input type="text" id="cuisine" name="cuisine" required>
+            <label for="date-added">Date Added (MM-DD-YYYY):</label>
+            <input type="date" id="date-added" name="dateAdded" required>
+            <label for="source">Source URL:</label>
+            <input type="url" id="source" name="source" required>
+
+            <br>
+            <button type="submit">Save Recipe</button>
+          </form>
+          <button type="button" id="close-recipe-modal">Close</button>
+        </div>
+      </section>
+
+      <!-- We should update this section so that each recipe appears as a row in a table -->
       <section class="meal-cards">
           <div class="meal-card">Meal 1</div>
           <p> Cajun Chicken Pasta</p>
@@ -35,9 +104,11 @@
           <img src="./assets/images/pepper-chicken-stir-fry.webp">
       </section>
   </main>
+
   <footer>
-      <p>(Footer)Place Holder Text</p>
+      <p>Made with ❤️ by Nathan Green, Peter Hintze, and Omar Mohammed</p>
   </footer>
 
+  <script src="./assets/js/logic.js"></script>
 </body>
 </html>

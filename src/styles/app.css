@@ -143,3 +143,63 @@ footer {
   text-align: center;
   padding: 1.5em;
 }
+
+.weekly-planner {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 15px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.day-box {
+  background-image: url('../assets/images/wrinkled-paper.jpg'); /* Use your image path */
+  background-color: #9CAEA9;
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.2em;
+  color: #333;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+  text-align: center;
+  min-height: 600px; 
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.crinkled-paper:hover {
+  transform: rotate(-1deg) scale(1);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+#recipe-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns across */
+  gap: 20px; /* Space between cards */
+  margin: 20px 0;
+}
+
+#recipe-cards div {
+  background-color: #9CAEA9; /* Light background for each recipe card */
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  border-radius: 8px; /* Rounds the corners */
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  #recipe-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #recipe-cards {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}

@@ -739,8 +739,6 @@ footer {
 }
 
 .weekly-planner {
-  grid-template-columns: repeat(4, 2fr);
-  margin: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -786,8 +784,7 @@ footer {
   align-items: top;
   justify-content: center;
   text-align: center;
-  height: 250px;
-  /* Fixed height for all boxes */
+  height: 600px;
   transition: transform 0.3s ease;
 }
 
@@ -837,7 +834,7 @@ footer {
 
 @media (max-width: 991px) and (min-width: 768px) {
   .weekly-planner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
 
@@ -848,7 +845,7 @@ footer {
 
 @media (max-width: 767px) and (min-width: 576px) {
   .weekly-planner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1fr);
     gap: 10px;
   }
 
@@ -857,13 +854,49 @@ footer {
   }
 }
 
-@media (max-width: 575px) {
+@media (min-width: 391px) and (max-width: 844px) {
   .weekly-planner {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "monday tuesday"
+      "wednesday thursday"
+      "friday saturday"
+      "sunday sunday";
+    gap: 15px;
   }
 
   .weekly-planner div {
-    height: 160px;
+    min-height: 200px;
+    font-size: 1.1em;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+  }
+}
+
+@media (max-width: 390px) {
+  .weekly-planner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "monday"
+      "tuesday"
+      "wednesday"
+      "thursday"
+      "friday"
+      "saturday"
+      "sunday";
+    gap: 15px;
+  }
+
+  .weekly-planner div {
+    min-height: 180px;
+    font-size: 1em;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 2em;
   }
 }

@@ -28,67 +28,71 @@
       <button id="random-meal-btn">Food Roulette</button>
       </section>
 
-      <br>
-
       <section>
         <div id="add-recipe-btn-container"><button id="add-recipe-btn">+ Recipe</button></div>
         <div id="recipe-modal" class="modal hidden">
           <h2>Add a New Recipe</h2>
           <form id="recipe-form">
-            <label for="recipe-name">Recipe Name:</label>
-            <input type="text" id="recipe-name" name="recipeName" required>
-            <label for="recipe-description">Description:</label>
+            <div class="form-row">
+              <div class="form-column">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" name="recipeName" required>
 
-            <textarea id="recipe-description" name="description" required></textarea>
+                <label for="recipe-description">Description:</label>
+                <textarea id="recipe-description" name="description" required></textarea>
 
-            <h3>Ingredients</h3>
-            <div id="ingredient-list">
+                <h3>Ingredients</h3>
+                <div id="ingredient-list"></div>
+                <button type="button" id="add-ingredient-btn">+ Ingredient</button>
+                
+                <h3>Instructions</h3>
+                <div id="instruction-list"></div>
+                <button type="button" id="add-instruction-btn">+ Instruction</button>
               </div>
-            <button type="button" id="add-ingredient-btn">+ Ingredient</button>
 
-            <h3>Instructions</h3>
-            <div id="instruction-list">
+              <div class="form-column">
+                <label for="recipe-image">Image URL:</label>
+                <input type="url" id="recipe-image" name="mealImage" required>
+
+                <label for="difficulty-level">Difficulty Level:</label>
+                <select id="difficulty-level" name="difficultyLevel" required>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+
+                <label for="prep-time">Prep Time (minutes):</label>
+                <input type="number" id="prep-time" name="prepTime" required>
+
+                <label for="cook-time">Cook Time (minutes):</label>
+                <input type="number" id="cook-time" name="cookTime" required>
+
+                <label for="servings">Servings:</label>
+                <input type="number" id="servings" name="servings" required>
+
+                <label for="category">Category:</label>
+                <select id="category" name="categorySelection" required>
+                  <option value="appetizer">Appetizer</option>
+                  <option value="main">Main course</option>
+                  <option value="dessert">Dessert</option>
+                </select>
+
+                <label for="cuisine">Cuisine:</label>
+                <input type="text" id="cuisine" name="cuisine" required>
+
+                <label for="source">Source URL:</label>
+                <input type="url" id="source" name="source" required>
               </div>
-            <button type="button" id="add-instruction-btn">+ Instruction</button>
-
+            </div>
+          
             <br>
-            
-            <label for="recipe-image">Image URL:</label>
-            <input type="url" id="recipe-image" name="mealImage" required>
-            <label for="difficulty-level">Difficulty Level:</label>
-            <select id="difficulty-level" name="difficultyLevel" class="form-control" required>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-            
-            <label for="prep-time">Prep Time (minutes):</label>
-            <input type="number" id="prep-time" name="prepTime" required>
-            <label for="cook-time">Cook Time (minutes):</label>
-            <input type="number" id="cook-time" name="cookTime" required>
-            <label for="servings">Servings:</label>
-            <input type="number" id="servings" name="servings" required>
-            <label for="category">Category:</label>
-            <select id="category" name="categorySelection" class="form-control" required>
-              <option value="appetizer">Appetizer</option>
-              <option value="main">Main course</option>
-              <option value="dessert">Dessert</option>
-            </select>
-
-            <label for="cuisine">Cuisine:</label>
-            <input type="text" id="cuisine" name="cuisine" required>
-            <label for="source">Source URL:</label>
-            <input type="url" id="source" name="source" required>
-
-            <br>
-
             <button type="submit">Save Recipe</button>
           </form>
           <button type="button" id="close-recipe-modal">Close</button>
         </div>
       </section>
 
-     <section id="recipe-cards">
+    <section id="recipe-container">
   <table>
     <thead>
       <tr>

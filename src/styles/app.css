@@ -17,6 +17,7 @@ body {
   padding: 0;
   background-color: #27272a;
   color: #f8fafc;
+  overflow-x: hidden;
 }
 
 header h1 {
@@ -91,7 +92,6 @@ nav ul li:hover {
   font-weight: bold;
 }
 
-/* .form-column input, */
 .form-column textarea,
 .form-column select {
   padding: 5px;
@@ -235,46 +235,125 @@ footer {
 
 .weekly-planner {
   display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  gap: 15px;
-  margin: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0px 20px 0;
   padding: 10px;
+  grid-template-areas:
+    "monday tuesday wednesday"
+    "thursday friday saturday"
+    ". sunday .";
 }
 
-.day-box {
-  background-image: url('../assets/images/wrinkled-paper.jpg'); /* Use your image path */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(1.25deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-1.25deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.weekly-planner div {
   background-color: #9CAEA9;
-  background-size: cover; /* Ensures the image covers the entire div */
-  background-repeat: no-repeat;
-  background-position: center;
   padding: 20px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
   font-size: 1.2em;
   color: #333;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-  border: none;
-  text-align: center;
-  min-height: 600px; 
   border-radius: 8px;
   display: flex;
-  align-items: flex-start;
+  align-items: top;
   justify-content: center;
-  position: relative;
+  text-align: center;
+  height: 600px;
+  transition: transform 0.3s ease;
 }
 
-.crinkled-paper:hover {
-  transform: rotate(-1deg) scale(1);
+.weekly-planner div:hover {
+  animation: wiggle 1s ease-in-out;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1024px) {
-  #recipe-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+.weekly-planner div:nth-child(1) { grid-area: monday; }
+.weekly-planner div:nth-child(2) { grid-area: tuesday; }
+.weekly-planner div:nth-child(3) { grid-area: wednesday; }
+.weekly-planner div:nth-child(4) { grid-area: thursday; }
+.weekly-planner div:nth-child(5) { grid-area: friday; }
+.weekly-planner div:nth-child(6) { grid-area: saturday; }
+.weekly-planner div:nth-child(7) { grid-area: sunday; }
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .weekly-planner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  .weekly-planner div {
+    height: 220px;
   }
 }
 
-@media (max-width: 768px) {
-  #recipe-cards {
-    grid-template-columns: 1fr; /* 1 column on small screens */
+@media (max-width: 991px) and (min-width: 768px) {
+  .weekly-planner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  .weekly-planner div {
+    height: 200px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .weekly-planner {
+    grid-template-columns: repeat(1fr);
+    gap: 10px;
+  }
+  .weekly-planner div {
+    height: 180px;
+  }
+}
+@media (min-width: 391px) and (max-width: 844px) {
+  .weekly-planner {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "monday tuesday"
+      "wednesday thursday"
+      "friday saturday"
+      "sunday sunday";
+    gap: 15px;
+  }
+
+  .weekly-planner div {
+    min-height: 200px;
+    font-size: 1.1em;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+  }
+}
+
+@media (max-width: 390px) {
+  .weekly-planner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "monday"
+      "tuesday"
+      "wednesday"
+      "thursday"
+      "friday"
+      "saturday"
+      "sunday";
+    gap: 15px;
+  }
+
+  .weekly-planner div {
+    min-height: 180px;
+    font-size: 1em;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 2em;
   }
 }

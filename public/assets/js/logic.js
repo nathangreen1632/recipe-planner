@@ -285,3 +285,17 @@ function renderRecipes() {
 }
 
 renderRecipes();
+
+document.addEventListener("DOMContentLoaded", function () {
+    const plannerCards = document.querySelectorAll(".weekly-planner div");
+  
+    plannerCards.forEach((card) => {
+      card.addEventListener("touchstart", () => {
+        card.classList.add("move");
+        setTimeout(() => {
+          card.classList.remove("move");
+        }, 300); // Reset after animation duration
+      });
+    });
+  });
+  

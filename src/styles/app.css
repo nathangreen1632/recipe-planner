@@ -213,6 +213,16 @@ footer {
   100% { transform: rotate(0deg); }
 }
 
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.move {
+  animation: bounce 0.3s ease-in-out;
+}
+
 .weekly-planner div {
   background-color: #9CAEA9;
   padding: 20px;

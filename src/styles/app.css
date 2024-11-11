@@ -11,12 +11,26 @@
   }
 }
 
+:root {
+  --primary-background-color: #27272a;
+  --primary-text-color: #f8fafc;
+  --primary-btn-color: #71717a;
+  --primary-btn-hover-color: #4a4a4a;
+  --secondary-btn-color: #ad9b9f;
+  --secondary-btn-hover-color: #a99bad;
+  --form-text-color: #52525b;
+  --recipe-card-color: #9CAEA9;
+  --recipe-card-font-color: #27272A;
+  --recipe-card-btn-color: #ad9b9f;
+  --recipe-card-btn-hover-color: #a99bad;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #27272a;
-  color: #f8fafc;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
   overflow-x: hidden;
 }
 
@@ -34,14 +48,14 @@ nav ul {
 }
 
 nav ul li {
-  background-color: #71717a;
+  background-color: var(--primary-btn-color);
   padding: 5px;
   border-radius: 5px;
   
 }
 
 nav ul li:hover {
-  background-color: #4a4a4a;
+  background-color: var(--primary-btn-hover-color);
   box-shadow: 0 0 10px 0 #09090b;
 }
 
@@ -52,13 +66,13 @@ nav ul li:hover {
 }
 
 #add-recipe-btn {
-  background-color: #71717a;
+  background-color: var(--primary-btn-color);
   padding: 5px;
   border-radius: 5px;
 }
 
 #add-recipe-btn:hover {
-  background-color: #4a4a4a;
+  background-color: var(--primary-btn-hover-color);
   box-shadow: 0 0 10px 0 #09090b;
 }
 
@@ -96,7 +110,7 @@ nav ul li:hover {
 .form-column select {
   padding: 5px;
   border-radius: 5px;
-  color: #52525b;
+  color: var(--form-text-color);
 }
 
 #recipe-form h3, #recipe-form label {
@@ -107,24 +121,24 @@ nav ul li:hover {
 #recipe-name, #recipe-description, #recipe-image, #difficulty-level, #prep-time, #cook-time, #servings, #category, #cuisine, #source {
   padding: 5px;
   border-radius: 5px;
-  color: #52525b;
+  color: var(--form-text-color);
   width: 75%;
 }
 
 #recipe-form textarea {
   resize: both;
   border-radius: 5px;
-  color: #52525b;
+  color: var(--form-text-color);
 }
 
 #recipe-form select {
   padding: 5px;
   border-radius: 5px;
-  color: #52525b;
+  color: var(--form-text-color);
 }
 
 #recipe-form button {
-  background-color: #71717a;
+  background-color: var(--primary-btn-color);
   padding: 2px;
   margin: 0.5em;
   border-radius: 5px;
@@ -132,7 +146,7 @@ nav ul li:hover {
 }
 
 #recipe-form button:hover {
-  background-color: #4a4a4a;
+  background-color: var(--primary-btn-hover-color);
   box-shadow: 0 0 10px 0 #09090b;
 }
 
@@ -154,18 +168,18 @@ nav ul li:hover {
 
 #ingredient-input, #instruction-input {
   border-radius: 5px;
-  color: #52525b;
+  color: var(--form-text-color);
 }
 
 #close-recipe-modal {
-  background-color: #71717a;
+  background-color: var(--primary-btn-color);
   padding: 5px;
   margin: 0.5em;
   border-radius: 5px;
 }
 
 #close-recipe-modal:hover {
-  background-color: #4a4a4a;
+  background-color: var(--primary-btn-hover-color);
   box-shadow: 0 0 10px 0 #09090b;
 }
 
@@ -178,7 +192,8 @@ nav ul li:hover {
 }
 
 .recipe-card {
-  background-color: #9CAEA9;
+  background-color: var(--recipe-card-color);
+  color: var(--recipe-card-font-color);
   padding: 15px;
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -205,14 +220,15 @@ nav ul li:hover {
 }
 
 .recipe-card button {
-  background-color: #ad9b9f;
+  background-color: var(--recipe-card-btn-color);
+  color: white; /* find a better color */
   padding: 5px;
   margin: 0.5em;
   border-radius: 5px;
 }
 
 .recipe-card button:hover {
-  background-color: #a99bad;
+  background-color: var(--recipe-card-btn-hover-color);
   box-shadow: 0 0 10px 0 #fefefe;
 }
 
@@ -254,11 +270,11 @@ footer {
 }
 
 .weekly-planner div {
-  background-color: #9CAEA9;
+  background-color: var(--recipe-card-color);
   padding: 20px;
   font-family: 'Trebuchet MS', Arial, sans-serif;
   font-size: 1.2em;
-  color: #333;
+  color: var(--recipe-card-font-color);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   display: flex;

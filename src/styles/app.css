@@ -171,9 +171,57 @@ nav ul li:hover {
 
 #recipe-container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 1.5em;
+}
+
+.recipe-card {
+  background-color: #9CAEA9;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+.recipe-card h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.recipe-card h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.3em 0;
+}
+
+.recipe-card img {
+  max-width: 50%;
+  margin: 8px auto;
+  border-radius: 8px;
+}
+
+.recipe-card button {
+  background-color: #ad9b9f;
+  padding: 5px;
+  margin: 0.5em;
+  border-radius: 5px;
+}
+
+.recipe-card button:hover {
+  background-color: #a99bad;
+  box-shadow: 0 0 10px 0 #fefefe;
+}
+
+.recipe-card ul {
+  padding: 0px 5px;
+}
+
+.ingredient-details {
+  list-style-type: disc;
 }
 
 .hidden {
@@ -217,20 +265,6 @@ footer {
 .crinkled-paper:hover {
   transform: rotate(-1deg) scale(1);
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
-}
-#recipe-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns across */
-  gap: 20px; /* Space between cards */
-  margin: 20px 0;
-}
-
-#recipe-cards div {
-  background-color: #9CAEA9; /* Light background for each recipe card */
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-  border-radius: 8px; /* Rounds the corners */
-  text-align: center;
 }
 
 @media (max-width: 1024px) {

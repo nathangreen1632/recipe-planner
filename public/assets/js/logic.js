@@ -21,8 +21,6 @@ function renderRecipes() {
     // Clear any existing child elements (optional)
     recipeContainer.innerHTML = ''; // Uncomment if you want to clear previous recipes
 
-
-
     allRecipes.forEach(recipe => {
         const recipeCard = createRecipeCard(recipe);
         recipeContainer.appendChild(recipeCard);
@@ -52,7 +50,7 @@ function createIngredientField() {
     unitOfMeasureSelect.name = 'ingredients[].unitOfMeasure';
 
     const unitOptions = [
-        {value: null, text: 'none'},
+        {value: '', text: 'none'},
         {value: 'grams', text: 'gram'},
         {value: 'ounces', text: 'oz'},
         {value: 'pounds', text: 'lbs'},
@@ -209,7 +207,7 @@ recipeForm.addEventListener('submit', (event) => {
     newRecipe.ingredients = [];
     const ingredientItems = document.querySelectorAll('#ingredient-list .ingredient-item');
     ingredientItems.forEach(item => {
-        const ingredientNameInput = item.querySelector('input[type="text"]');
+        const ingredientNameInput = item.querySelector('textarea');
         const quantityInput = item.querySelector('input[type="text"]');
         const unitOfMeasureSelect = item.querySelector('select');
 
@@ -221,7 +219,7 @@ recipeForm.addEventListener('submit', (event) => {
     });
 
     newRecipe.instructions = [];
-    const instructionsInputs = document.querySelectorAll('#instruction-list input[type="text"]');
+    const instructionsInputs = document.querySelectorAll('#instruction-list .instruction-item textarea');
     instructionsInputs.forEach((input, index) => {
     newRecipe.instructions.push({
         step: index + 1,
@@ -235,10 +233,10 @@ recipeForm.addEventListener('submit', (event) => {
 
     recipeArray.push(newRecipe);
     localStorage.setItem('recipeArray', JSON.stringify(recipeArray));
-
     console.log('Recipe saved to local storage');
 
     renderRecipes();
+    window.location.reload();
 });
 
 function createRecipeCard(recipe) {
@@ -302,8 +300,14 @@ function createRecipeCard(recipe) {
     const cuisine = document.createElement('p');
     cuisine.textContent = `Cuisine: ${recipe.cuisine || 'Unknown'}`;
 
-    const source = document.createElement('p');
-    source.textContent = `Source: ${recipe.source || 'Unknown'}`;
+    const sourceContainer = document.createElement('p');
+    const source = document.createElement('a');
+    source.href = recipe.source || '#';
+    source.target = '_blank';
+    source.textContent = recipe.source || 'Unknown';
+
+    sourceContainer.textContent = 'Source: ';
+    sourceContainer.appendChild(source);
 
     const servings = document.createElement('p');
     servings.textContent = `Servings: ${recipe.servings || 'Unknown'}`;
@@ -324,12 +328,12 @@ function createRecipeCard(recipe) {
         instructionToggle.textContent = instructionToggle.textContent === 'Show Instructions' ? 'Hide Instructions' : 'Show Instructions';
     });
 
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Remove Recipe';
-    removeButton.classList.add('remove-recipe-btn');
+    const removeRecipeBtn = document.createElement('button');
+    removeRecipeBtn.textContent = 'Remove Recipe';
+    removeRecipeBtn.classList.add('remove-recipe-btn');
 
-    removeButton.addEventListener('click', () => {
-        const recipeCard = removeButton.closest('.recipe-card');
+    removeRecipeBtn.addEventListener('click', () => {
+        const recipeCard = removeRecipeBtn.closest('.recipe-card');
 
         if (recipeCard) {
             const recipeName = recipeCard.querySelector('h3').textContent;
@@ -342,11 +346,13 @@ function createRecipeCard(recipe) {
                 localStorage.setItem('recipeArray', JSON.stringify(parsedRecipes));
 
                 recipeCard.remove();
-                renderRecipes();
             }
         } else {
             console.error('Recipe card not found');
         }
+
+        renderRecipes();
+        window.location.reload();
     });
 
     recipeDetails.appendChild(ingredientToggle);
@@ -356,8 +362,8 @@ function createRecipeCard(recipe) {
     additionalDetails.appendChild(category);
     additionalDetails.appendChild(cuisine);
     additionalDetails.appendChild(servings);
-    additionalDetails.appendChild(source);
-    additionalDetails.appendChild(removeButton);
+    additionalDetails.appendChild(sourceContainer);
+    additionalDetails.appendChild(removeRecipeBtn);
 
     recipeDetails.appendChild(additionalDetails);
 

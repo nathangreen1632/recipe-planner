@@ -26,7 +26,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--primary-background-color);
@@ -240,6 +240,15 @@ nav ul li:hover {
   list-style-type: disc;
 }
 
+.recipe-card a {
+  color: #3e6dc5;
+  text-decoration: underline;
+}
+
+.remove-recipe-btn {
+  display: block;
+}
+
 .hidden {
   display: none;
 }
@@ -272,7 +281,6 @@ footer {
 .weekly-planner div {
   background-color: var(--recipe-card-color);
   padding: 20px;
-  font-family: 'Trebuchet MS', Arial, sans-serif;
   font-size: 1.2em;
   color: var(--recipe-card-font-color);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);

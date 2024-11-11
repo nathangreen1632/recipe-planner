@@ -303,7 +303,7 @@ function createRecipeCard(recipe) {
     cuisine.textContent = `Cuisine: ${recipe.cuisine || 'Unknown'}`;
 
     const source = document.createElement('p');
-    source.textContent = `Source: ${recipe.source || 'Unknown'}`;
+    source.textContent = `Source: ${recipe.source || 'Unknown'}`;  // Make source clickable to open in new tab
 
     const servings = document.createElement('p');
     servings.textContent = `Servings: ${recipe.servings || 'Unknown'}`;

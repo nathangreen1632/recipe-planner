@@ -18,9 +18,6 @@ const recipeContainer = document.getElementById('recipe-container');
 function renderRecipes() {
     const recipeContainer = document.getElementById('recipe-container');
 
-    // Clear any existing child elements (optional)
-    recipeContainer.innerHTML = ''; // Uncomment if you want to clear previous recipes
-
     allRecipes.forEach(recipe => {
         const recipeCard = createRecipeCard(recipe);
         recipeContainer.appendChild(recipeCard);
@@ -239,9 +236,26 @@ recipeForm.addEventListener('submit', (event) => {
     window.location.reload();
 });
 
-function createRecipeCard(recipe) {
+function createRecipeCard(recipe, isRandom = false) {
+    const addToGroceryListBtn = document.createElement('button');
+    addToGroceryListBtn.textContent = 'Add to Grocery List';
+    addToGroceryListBtn.addEventListener('click', () => {
+        addToGroceryList(recipe);
+
+        const successMessage = document.createElement('p');
+        successMessage.textContent = 'Ingredients added to grocery list!';
+        recipeCard.appendChild(successMessage);
+        setTimeout(() => {
+            successMessage.remove();
+        }, 3000);
+    });
+    
     const recipeCard = document.createElement('div');
     recipeCard.classList.add('recipe-card');
+    
+    if (isRandom) {
+        recipeCard.classList.add('random-recipe-card');
+    };
 
     const recipeName = document.createElement('h3');
     recipeName.textContent = recipe.recipeName;
@@ -364,6 +378,7 @@ function createRecipeCard(recipe) {
     additionalDetails.appendChild(servings);
     additionalDetails.appendChild(sourceContainer);
     additionalDetails.appendChild(removeRecipeBtn);
+    additionalDetails.appendChild(addToGroceryListBtn);
 
     recipeDetails.appendChild(additionalDetails);
 
@@ -374,3 +389,56 @@ function createRecipeCard(recipe) {
 
     return recipeCard;
 }
+
+const randomRecipeBtn = document.getElementById('random-recipe-btn');
+const recipeGeneratorContainer = document.getElementsByClassName('recipe-generator-container')[0];
+
+randomRecipeBtn.addEventListener('click', () => {
+    const existingRandomRecipeCard = recipeGeneratorContainer.querySelector('.random-recipe-card');
+    if (existingRandomRecipeCard) {
+        existingRandomRecipeCard.remove();
+    }
+
+    const randomIndex = Math.floor(Math.random() * allRecipes.length);
+    const randomRecipe = allRecipes[randomIndex];
+
+    
+    const randomRecipeCard = createRecipeCard(randomRecipe, true);
+    recipeGeneratorContainer.appendChild(randomRecipeCard);
+    const randomRecipeRemoveBtn = randomRecipeCard.querySelector('.remove-recipe-btn');
+    randomRecipeRemoveBtn.textContent = 'Hide Recipe';
+});
+
+function addToGroceryList(recipe) {
+    const groceryList = new Set(JSON.parse(localStorage.getItem('groceryListArray')) || []);
+
+    recipe.ingredients.forEach(ingredient => {
+    groceryList.add(ingredient);
+    });
+
+    localStorage.setItem('groceryListArray', JSON.stringify([...groceryList]));
+    
+    console.log('Ingredients added to grocery list:', groceryList);
+}
+
+function renderGroceryList() {
+    const groceryListContainer = document.querySelector('.grocery-list');
+    groceryListContainer.innerHTML = ''; // Clear existing content
+
+    const storedGroceryList = JSON.parse(localStorage.getItem('groceryListArray')) || [];
+    
+    storedGroceryList.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.quantity} ${item.unitOfMeasure} ${item.ingredientName}`;
+        groceryListContainer.appendChild(listItem);
+    });
+}
+
+// function removeItemFromGroceryList(item) {
+//     const groceryList = JSON.parse(localStorage.getItem('groceryListArray')) || [];
+//     const index = groceryList.indexOf(item);
+//     if (index !== -1) {
+//         groceryList.splice(index, 1);
+//         localStorage.setItem('groceryListArray', JSON.stringify(groceryList));
+//     }
+// }

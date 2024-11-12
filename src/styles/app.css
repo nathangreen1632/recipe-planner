@@ -20,7 +20,7 @@
   --secondary-btn-hover-color: #a99bad;
   --form-text-color: #52525b;
   --recipe-card-color: #9CAEA9;
-  --recipe-card-font-color: #27272A;
+  --recipe-card-font-color: #38383c;
   --recipe-card-btn-color: #ad9b9f;
   --recipe-card-btn-hover-color: #a99bad;
 }
@@ -59,25 +59,43 @@ nav ul li:hover {
   box-shadow: 0 0 10px 0 #09090b;
 }
 
+button {
+  background-color: var(--primary-btn-color);
+  color: var(--primary-text-color);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--primary-btn-hover-color);
+  box-shadow: 0 0 10px 0 #09090b;
+}
+
+.recipe-generator-container {
+  background-color: var(--recipe-card-color);
+  color: var(--recipe-card-font-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 10px 15px;
+}
+
+.recipe-generator-container h3 {
+  font-size: 1.5em;
+}
+
+#random-recipe-btn {
+  margin: 1em;
+}
+
 #add-recipe-btn-container {
   display: flex;
   justify-content: flex-end;
   margin: 1em;
 }
 
-#add-recipe-btn {
-  background-color: var(--primary-btn-color);
-  padding: 5px;
-  border-radius: 5px;
-}
-
-#add-recipe-btn:hover {
-  background-color: var(--primary-btn-hover-color);
-  box-shadow: 0 0 10px 0 #09090b;
-}
-
 #recipe-modal {
-  background-color: #52525b;
+  background-color: var(--recipe-card-color);
+  color: var(--recipe-card-font-color);
   padding: 1em;
   border-radius: 10px;
   margin: 1em;
@@ -138,16 +156,9 @@ nav ul li:hover {
 }
 
 #recipe-form button {
-  background-color: var(--primary-btn-color);
   padding: 2px;
   margin: 0.5em;
-  border-radius: 5px;
   width: 25%;
-}
-
-#recipe-form button:hover {
-  background-color: var(--primary-btn-hover-color);
-  box-shadow: 0 0 10px 0 #09090b;
 }
 
 #recipe-form button[type="submit"] {
@@ -173,6 +184,7 @@ nav ul li:hover {
 
 #close-recipe-modal {
   background-color: var(--primary-btn-color);
+  color: var(--primary-text-color);
   padding: 5px;
   margin: 0.5em;
   border-radius: 5px;
@@ -220,16 +232,7 @@ nav ul li:hover {
 }
 
 .recipe-card button {
-  background-color: var(--recipe-card-btn-color);
-  color: white; /* find a better color */
-  padding: 5px;
   margin: 0.5em;
-  border-radius: 5px;
-}
-
-.recipe-card button:hover {
-  background-color: var(--recipe-card-btn-hover-color);
-  box-shadow: 0 0 10px 0 #fefefe;
 }
 
 .recipe-card ul {

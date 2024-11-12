@@ -421,18 +421,20 @@ function addToGroceryList(recipe) {
     console.log('Ingredients added to grocery list:', groceryList);
 }
 
-function renderGroceryList() {
-    const groceryListContainer = document.querySelector('.grocery-list');
-    groceryListContainer.innerHTML = ''; // Clear existing content
+//The following functions are not currently working and likely need to be moved to a separate file
 
-    const storedGroceryList = JSON.parse(localStorage.getItem('groceryListArray')) || [];
+// function renderGroceryList() {
+//     const groceryListContainer = document.querySelector('.grocery-list');
+//     groceryListContainer.innerHTML = ''; // Clear existing content
+
+//     const storedGroceryList = JSON.parse(localStorage.getItem('groceryListArray')) || [];
     
-    storedGroceryList.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${item.quantity} ${item.unitOfMeasure} ${item.ingredientName}`;
-        groceryListContainer.appendChild(listItem);
-    });
-}
+//     storedGroceryList.forEach(item => {
+//         const listItem = document.createElement('li');
+//         listItem.textContent = `${item.quantity} ${item.unitOfMeasure} ${item.ingredientName}`;
+//         groceryListContainer.appendChild(listItem);
+//     });
+// }
 
 // function removeItemFromGroceryList(item) {
 //     const groceryList = JSON.parse(localStorage.getItem('groceryListArray')) || [];

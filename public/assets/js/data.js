@@ -29,6 +29,7 @@ export const baseRecipes = [{
     prepTime: "15 mins",
     cookTime: "30 mins",
     servings: 2,
+    cuisine: "Cajun",
     category:"Main Course",
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/cajun-chicken-pasta/170412"
@@ -55,6 +56,7 @@ export const baseRecipes = [{
     prepTime: "15 mins",
     cookTime: "30 mins",
     servings: 2,
+    cuisine: "American",
     category:"Main Course",
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/cheesy-chicken-and-rice-bake/186192"
@@ -93,6 +95,7 @@ export const baseRecipes = [{
     prepTime: "15 mins",
     cookTime: "30 mins",
     servings: 2,
+    cuisine: "Mexican",
     category:"Main Course",
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/chicken-tortilla-soup-ala-steve/161821"
@@ -129,6 +132,7 @@ export const baseRecipes = [{
     prepTime: "15 mins",
     cookTime: "30 mins",
     servings: 2,
+    cuisine: "American",
     category:"Main Course",
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/marinated-flank-steak/164890"
@@ -166,6 +170,7 @@ export const baseRecipes = [{
     prepTime: "15 mins",
     cookTime: "30 mins",
     servings: 2,
+    cuisine: "Asian",
     category:"Main Course",
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/pepper-chicken-stir-fry/2401177"
@@ -211,11 +216,12 @@ export const baseRecipes = [{
     prepTime: "15 mins",
     cookTime: "30 mins",
     servings: 2,
+    cuisine: "Italian",
     category:"Main Course",
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/worlds-best-lasagna/169093"
 },{
-    recipeName: " Tacos - Ground Beef",
+    recipeName: "Ground Beef Tacos",
     description: "This is a great recipe for authentic Mexican taqueria style ground beef tacos (tacos de carne molida) that your family will love.",
     ingredients: [
         {ingredientName: "Ground beef", quantity: "1/2", unitOfMeasure: "lb"},
@@ -245,6 +251,7 @@ export const baseRecipes = [{
     prepTime: "15 mins",
     cookTime: "30 mins",
     servings: 2,
+    cuisine: "Mexican",
     category:"Main Course",
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/taco-ground-beef/732308"

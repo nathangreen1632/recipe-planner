@@ -1,6 +1,4 @@
-/* Add CSS for the app here
-  * This file will be included in the final build
-*/
+/* Tailwind Imports */
 
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
@@ -110,8 +108,7 @@
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com
-*/
+/* ! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -561,6 +558,10 @@ video {
   display: none;
 }
 
+/* Custom Components */
+
+/* Root Variables */
+
 :root {
   --primary-background-color: #27272a;
   --primary-text-color: #f8fafc;
@@ -574,6 +575,8 @@ video {
   --recipe-card-btn-color: #ad9b9f;
   --recipe-card-btn-hover-color: #a99bad;
 }
+
+/* General Styles */
 
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -654,6 +657,8 @@ button:hover {
   font-weight: bold;
   font-size: 2em;
 }
+
+/* Form Styles */
 
 .form-row {
   display: flex;
@@ -744,6 +749,8 @@ button:hover {
   box-shadow: 0 0 10px 0 #09090b;
 }
 
+/* Recipe Card Styles */
+
 #recipe-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -805,10 +812,14 @@ button:hover {
   display: none;
 }
 
+/* Footer */
+
 footer {
   text-align: center;
   padding: 1.5em;
 }
+
+/* Weekly Planner Grid */
 
 .weekly-planner {
   display: grid;
@@ -820,28 +831,6 @@ footer {
     "monday tuesday wednesday"
     "thursday friday saturday"
     ". sunday .";
-}
-
-@keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(1.25deg);
-  }
-
-  50% {
-    transform: rotate(0deg);
-  }
-
-  75% {
-    transform: rotate(-1.25deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
 }
 
 .weekly-planner div {
@@ -892,8 +881,34 @@ footer {
   grid-area: sunday;
 }
 
+/* Keyframes */
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(1.25deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-1.25deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Media Queries */
+
 @media (max-width: 1199px) and (min-width: 992px) {
-  .weekly-planner {
+  .weekly-planner.recipe-card {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }

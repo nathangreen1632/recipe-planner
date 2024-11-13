@@ -316,7 +316,7 @@ footer {
 
 /* Media Queries */
 @media (max-width: 1199px) and (min-width: 992px) {
-  .weekly-planner, .recipe-card {
+  .weekly-planner.recipe-card {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }

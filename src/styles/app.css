@@ -198,9 +198,10 @@ button:hover {
 
 /* Recipe Card Styles */
 #recipe-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin: 20px 0px 20px 0;
   padding: 10px;
 }
@@ -279,22 +280,31 @@ footer {
 
 .weekly-planner div {
   background-color: var(--recipe-card-color);
-  padding: 20px;
-  font-size: 1.2em;
   color: var(--recipe-card-font-color);
+  padding: 20px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  text-align: center;
-  height: 600px;
+  /* height: 600px; */
   transition: transform 0.3s ease;
 }
 
 .weekly-planner div:hover {
   animation: wiggle 1s ease-in-out;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-planner h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weekly-planner select {
+  background-color: var(--secondary-btn-color);
+  color: var(--recipe-card-font-color);
+  border-radius: 8px;
+  padding: 10px 0;
+  margin: 10px 0 5px 25px;
 }
 
 .weekly-planner div:nth-child(1) { grid-area: monday; }
@@ -316,7 +326,7 @@ footer {
 
 /* Media Queries */
 @media (max-width: 1199px) and (min-width: 992px) {
-  .weekly-planner.recipe-card {
+  .weekly-planner {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
@@ -376,7 +386,7 @@ footer {
       "friday"
       "saturday"
       "sunday";
-    gap: 15px;
+    gap: 10px;
   }
   .weekly-planner div {
     min-height: 180px;

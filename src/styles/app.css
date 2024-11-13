@@ -1,16 +1,16 @@
-/* Add CSS for the app here
-  * This file will be included in the final build
-*/
+/* Tailwind Imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Components */
 @layer components {
   .btn {
     @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
   }
 }
 
+/* Root Variables */
 :root {
   --primary-background-color: #27272a;
   --primary-text-color: #f8fafc;
@@ -25,6 +25,7 @@
   --recipe-card-btn-hover-color: #a99bad;
 }
 
+/* General Styles */
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 0;
@@ -51,7 +52,6 @@ nav ul li {
   background-color: var(--primary-btn-color);
   padding: 5px;
   border-radius: 5px;
-  
 }
 
 nav ul li:hover {
@@ -106,6 +106,7 @@ button:hover {
   font-size: 2em;
 }
 
+/* Form Styles */
 .form-row {
   display: flex;
   justify-content: space-between;
@@ -195,13 +196,14 @@ button:hover {
   box-shadow: 0 0 10px 0 #09090b;
 }
 
+/* Recipe Card Styles */
 #recipe-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 20px 0px 20px 0;
-    padding: 10px;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0px 20px 0;
+  padding: 10px;
+}
 
 .recipe-card {
   background-color: var(--recipe-card-color);
@@ -256,11 +258,13 @@ button:hover {
   display: none;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1.5em;
 }
 
+/* Weekly Planner Grid */
 .weekly-planner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -271,14 +275,6 @@ footer {
     "monday tuesday wednesday"
     "thursday friday saturday"
     ". sunday .";
-}
-
-@keyframes wiggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(1.25deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-1.25deg); }
-  100% { transform: rotate(0deg); }
 }
 
 .weekly-planner div {
@@ -309,8 +305,18 @@ footer {
 .weekly-planner div:nth-child(6) { grid-area: saturday; }
 .weekly-planner div:nth-child(7) { grid-area: sunday; }
 
+/* Keyframes */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(1.25deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-1.25deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Media Queries */
 @media (max-width: 1199px) and (min-width: 992px) {
-  .weekly-planner {
+  .weekly-planner.recipe-card {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
@@ -338,6 +344,7 @@ footer {
     height: 180px;
   }
 }
+
 @media (min-width: 391px) and (max-width: 844px) {
   .weekly-planner {
     grid-template-columns: repeat(2, 1fr);
@@ -348,13 +355,11 @@ footer {
       "sunday sunday";
     gap: 15px;
   }
-
   .weekly-planner div {
     min-height: 200px;
     font-size: 1.1em;
     padding: 20px;
   }
-
   header h1 {
     font-size: 2.2em;
   }
@@ -373,13 +378,11 @@ footer {
       "sunday";
     gap: 15px;
   }
-
   .weekly-planner div {
     min-height: 180px;
     font-size: 1em;
     padding: 15px;
   }
-
   header h1 {
     font-size: 2em;
   }

@@ -11,7 +11,7 @@ const addInstructionBtn = document.getElementById('add-instruction-btn');
 
 const storedRecipes = localStorage.getItem('recipeArray');
 const parsedRecipes = JSON.parse(storedRecipes) || [];
-const allRecipes = [...baseRecipes, ...parsedRecipes];
+export const allRecipes = [...baseRecipes, ...parsedRecipes];
 
 const recipeContainer = document.getElementById('recipe-container');
 

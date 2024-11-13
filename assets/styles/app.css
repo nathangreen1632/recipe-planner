@@ -558,6 +558,10 @@ video {
   display: none;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* Custom Components */
 
 /* Root Variables */
@@ -908,7 +912,7 @@ footer {
 /* Media Queries */
 
 @media (max-width: 1199px) and (min-width: 992px) {
-  .weekly-planner.recipe-card {
+  .weekly-planner, .recipe-card {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
@@ -919,29 +923,29 @@ footer {
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
-  .weekly-planner {
+  .weekly-planner.recipe-card {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
 
-  .weekly-planner div {
+  .weekly-planner.recipe-card div {
     height: 200px;
   }
 }
 
 @media (max-width: 767px) and (min-width: 576px) {
-  .weekly-planner {
+  .weekly-planner.recipe-card {
     grid-template-columns: repeat(1fr);
     gap: 10px;
   }
 
-  .weekly-planner div {
+  .weekly-planner.recipe-card div {
     height: 180px;
   }
 }
 
 @media (min-width: 391px) and (max-width: 844px) {
-  .weekly-planner {
+  .weekly-planner.recipe-card {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
       "monday tuesday"
@@ -951,7 +955,7 @@ footer {
     gap: 15px;
   }
 
-  .weekly-planner div {
+  .weekly-planner.recipe-card div {
     min-height: 200px;
     font-size: 1.1em;
     padding: 20px;
@@ -963,7 +967,7 @@ footer {
 }
 
 @media (max-width: 390px) {
-  .weekly-planner {
+  .weekly-planner.recipe-card {
     grid-template-columns: 1fr;
     grid-template-areas:
       "monday"
@@ -976,7 +980,7 @@ footer {
     gap: 15px;
   }
 
-  .weekly-planner div {
+  .weekly-planner.recipe-card div {
     min-height: 180px;
     font-size: 1em;
     padding: 15px;
@@ -984,5 +988,11 @@ footer {
 
   header h1 {
     font-size: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:p-4 {
+    padding: 1rem;
   }
 }

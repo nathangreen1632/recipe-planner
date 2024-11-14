@@ -1,31 +1,27 @@
-/* Tailwind Imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Components */
 @layer components {
   .btn {
     @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
   }
 }
 
-/* Root Variables */
 :root {
-  --primary-background-color: #27272a;
-  --primary-text-color: #f8fafc;
-  --primary-btn-color: #71717a;
-  --primary-btn-hover-color: #4a4a4a;
-  --secondary-btn-color: #ad9b9f;
-  --secondary-btn-hover-color: #a99bad;
-  --form-text-color: #52525b;
-  --recipe-card-color: #9CAEA9;
-  --recipe-card-font-color: #38383c;
-  --recipe-card-btn-color: #ad9b9f;
-  --recipe-card-btn-hover-color: #a99bad;
+  --primary-background-color: #1A2E5B;
+  --primary-text-color: #333333;
+  --primary-btn-color: #bbf7d0;
+  --primary-btn-hover-color: #76B3E6;
+  --secondary-btn-color: #bbf7d0;
+  --secondary-btn-hover-color: #76B3E6;
+  --form-text-color: #3c76a2;
+  --recipe-card-color: #4b7bd3;
+  --recipe-card-font-color: #ffffff;
+  --recipe-card-btn-color: #bbf7d0;
+  --recipe-card-btn-hover-color: #76B3E6;
 }
 
-/* General Styles */
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 0;
@@ -33,11 +29,6 @@ body {
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
   overflow-x: hidden;
-}
-
-header h1 {
-  font-size: 3em;
-  text-align: center;
 }
 
 nav ul {
@@ -73,7 +64,7 @@ button:hover {
 
 .recipe-generator-container {
   background-color: var(--recipe-card-color);
-  color: var(--recipe-card-font-color);
+  color: var();
   border-radius: 5px;
   padding: 5px 10px;
   margin: 10px 15px;
@@ -106,7 +97,6 @@ button:hover {
   font-size: 2em;
 }
 
-/* Form Styles */
 .form-row {
   display: flex;
   justify-content: space-between;
@@ -196,7 +186,6 @@ button:hover {
   box-shadow: 0 0 10px 0 #09090b;
 }
 
-/* Recipe Card Styles */
 #recipe-container {
   display: flex;
   flex-wrap: wrap;
@@ -247,7 +236,7 @@ button:hover {
 }
 
 .recipe-card a {
-  color: #3e6dc5;
+  color: var(--recipe-card-color);
   text-decoration: underline;
 }
 
@@ -259,13 +248,11 @@ button:hover {
   display: none;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1.5em;
 }
 
-/* Weekly Planner Grid */
 .weekly-planner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -279,8 +266,6 @@ footer {
 }
 
 .weekly-planner div {
-  background-color: var(--recipe-card-color);
-  color: var(--recipe-card-font-color);
   padding: 20px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -301,7 +286,7 @@ footer {
 
 .weekly-planner select {
   background-color: var(--secondary-btn-color);
-  color: var(--recipe-card-font-color);
+  color: var(--primary-text-color);
   border-radius: 8px;
   padding: 10px 0;
   margin: 10px 0 5px 25px;
@@ -315,7 +300,6 @@ footer {
 .weekly-planner div:nth-child(6) { grid-area: saturday; }
 .weekly-planner div:nth-child(7) { grid-area: sunday; }
 
-/* Keyframes */
 @keyframes wiggle {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(1.25deg); }
@@ -324,76 +308,3 @@ footer {
   100% { transform: rotate(0deg); }
 }
 
-/* Media Queries */
-@media (max-width: 1199px) and (min-width: 992px) {
-  .weekly-planner {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
-  .weekly-planner div {
-    height: 220px;
-  }
-}
-
-@media (max-width: 991px) and (min-width: 768px) {
-  .weekly-planner.recipe-card {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
-  .weekly-planner.recipe-card div {
-    height: 200px;
-  }
-}
-
-@media (max-width: 767px) and (min-width: 576px) {
-  .weekly-planner.recipe-card {
-    grid-template-columns: repeat(1fr);
-    gap: 10px;
-  }
-  .weekly-planner.recipe-card div {
-    height: 180px;
-  }
-}
-
-@media (min-width: 391px) and (max-width: 844px) {
-  .weekly-planner.recipe-card {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "monday tuesday"
-      "wednesday thursday"
-      "friday saturday"
-      "sunday sunday";
-    gap: 15px;
-  }
-  .weekly-planner.recipe-card div {
-    min-height: 200px;
-    font-size: 1.1em;
-    padding: 20px;
-  }
-  header h1 {
-    font-size: 2.2em;
-  }
-}
-
-@media (max-width: 390px) {
-  .weekly-planner.recipe-card {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "monday"
-      "tuesday"
-      "wednesday"
-      "thursday"
-      "friday"
-      "saturday"
-      "sunday";
-    gap: 10px;
-  }
-  .weekly-planner.recipe-card div {
-    min-height: 180px;
-    font-size: 1em;
-    padding: 15px;
-  }
-  header h1 {
-    font-size: 2em;
-  }
-}

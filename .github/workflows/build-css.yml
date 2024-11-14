@@ -1,34 +1,39 @@
-name: Build and Deploy CSS to GitHub Pages
-
+name: CSS Build, Lint, and Deploy
 on:
   push:
     branches:
-      - main  # Run this action whenever you push to the main branch
+      - main
   pull_request:
-    types: [opened, synchronize, reopened]  # Run this action whenever a pull request is opened, synchronized, reopened, or closed
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
+    strategy:
+      matrix:
+        node-version: ['18.x', '20.x', '22.x']
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # Install dependencies (assuming a Node-based CSS build setup)
-      - name: Set up Node.js
+      - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: '22.5.1'
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: npm install
 
-      # Build CSS (assuming you have a build script in your package.json)
       - name: Build CSS
-        run: npm run build-css  # This depends on the specific build command you're using
+        run: npm run build-css
 
   sonarlint:
     name: SonarQube Cloud
@@ -37,20 +42,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
       - name: SonarQube Cloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   deploy:
     name: Deploy to Github Pages
     runs-on: ubuntu-latest
     needs: sonarlint
+    permissions:
+      contents: write
     steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public  # Replace with the directory containing your built files
+        publish_dir: ./public
 

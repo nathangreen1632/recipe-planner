@@ -10,7 +10,6 @@
   }
 }
 
-/* Root Variables */
 :root {
   --primary-background-color: #27272a;
   --primary-text-color: #f8fafc;
@@ -25,7 +24,6 @@
   --recipe-card-btn-hover-color: #a99bad;
 }
 
-/* General Styles */
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 0;
@@ -33,6 +31,11 @@ body {
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
   overflow-x: hidden;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 header h1 {
@@ -71,16 +74,13 @@ button:hover {
   box-shadow: 0 0 10px 0 #09090b;
 }
 
+/* Homepage Styling */
 .recipe-generator-container {
   background-color: var(--recipe-card-color);
   color: var(--recipe-card-font-color);
   border-radius: 5px;
   padding: 5px 10px;
   margin: 10px 15px;
-}
-
-.recipe-generator-container h3 {
-  font-size: 1.5em;
 }
 
 #random-recipe-btn {
@@ -106,7 +106,6 @@ button:hover {
   font-size: 2em;
 }
 
-/* Form Styles */
 .form-row {
   display: flex;
   justify-content: space-between;
@@ -196,7 +195,6 @@ button:hover {
   box-shadow: 0 0 10px 0 #09090b;
 }
 
-/* Recipe Card Styles */
 #recipe-container {
   display: flex;
   flex-wrap: wrap;
@@ -213,12 +211,11 @@ button:hover {
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  min-width: 350px;
   max-width: 500px;
 }
 
 .recipe-card h3 {
-  font-size: 1.5em;
-  font-weight: bold;
   text-align: center;
 }
 
@@ -259,13 +256,12 @@ button:hover {
   display: none;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1.5em;
 }
 
-/* Weekly Planner Grid */
+/* Planner Page styling */
 .weekly-planner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -284,7 +280,6 @@ footer {
   padding: 20px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  /* height: 600px; */
   transition: transform 0.3s ease;
 }
 
@@ -315,7 +310,44 @@ footer {
 .weekly-planner div:nth-child(6) { grid-area: saturday; }
 .weekly-planner div:nth-child(7) { grid-area: sunday; }
 
-/* Keyframes */
+.random-meal-btn, .grocery-list-btn {
+  margin: 1em;
+  padding: 5px 10px;
+}
+
+/* Grocery List Page Styling */
+.grocery-list-page {
+  display: flex;
+  justify-content: space-around;
+  gap: 25%;
+  margin: 20px;
+}
+
+.serving-size-controls {
+  flex: 0 0 25%;
+}
+
+.serving-size-controls h3, .grocery-list-container h3 {
+  margin: 10px 0;
+}
+
+.grocery-list-container {
+  flex: 1;
+  background-color: var(--recipe-card-color);
+  color: var(--recipe-card-font-color);
+  border-radius: 8px;
+  padding: 10px 0 10px 20px;
+  margin: 0 20px;
+}
+
+.grocery-list-container button {
+  margin: 10px 5px;
+}
+
+.grocery-list li {
+  list-style-type: none;
+}
+
 @keyframes wiggle {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(1.25deg); }
@@ -324,7 +356,6 @@ footer {
   100% { transform: rotate(0deg); }
 }
 
-/* Media Queries */
 @media (max-width: 1199px) and (min-width: 992px) {
   .weekly-planner {
     grid-template-columns: repeat(3, 1fr);

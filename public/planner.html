@@ -18,24 +18,11 @@
     </nav>
 </header>
 
-<!-- Main Planner Content -->
 <main>
-  <!-- Section for Planner Header -->
-  <section class="planner-header">
-    <h2>My Planner</h2>
-    <p>My Recipes | Grocery List</p>
+  <section>
+    <button class="random-meal-btn">Pick my meals</button>
   </section>
 
-  <!-- Section with Buttons -->
-  <section class="planner-controls">
-    <button class="meal-button">Pick my meals</button>
-    <div class="draggable-recipes">
-      <p>Draggable Recipes</p>
-    </div>
-    <p class="instructions">Split 7 days w/ generator within calendar</p>
-  </section>
-
-  <!-- Weekly Planner Section -->
   <section class="weekly-planner">
     <div>
       <h3>Monday</h3>
@@ -88,11 +75,14 @@
     </div>
   </section>
 
-  <!-- Generate Grocery List Button -->
-  <div class="grocery-list-button">
-    <button>Generate Grocery List</button>
+  <div>
+    <button id="groceryListBtn" class="grocery-list-btn">Generate Grocery List</button>
   </div>
 </main>
+
+<footer>
+  <p>Made with ❤️ by: Nathan Green, Peter Hintze, and, Omar Mohammed</p>
+</footer>
 
   <script type="module" src="./assets/js/planner.js"></script>
 </body>

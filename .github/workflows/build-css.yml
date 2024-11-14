@@ -5,7 +5,7 @@ on:
     branches:
       - main  # Run this action whenever you push to the main branch
   pull_request:
-
+    types: [opened, synchronize, reopened]  # Run this action whenever a pull request is opened, synchronized, reopened, or closed
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,10 +30,27 @@ jobs:
       - name: Build CSS
         run: npm run build-css  # This depends on the specific build command you're using
 
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+  sonarlint:
+    name: SonarQube Cloud
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public  # Replace with the directory containing your built files
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarQube Cloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  deploy:
+    name: Deploy to Github Pages
+    runs-on: ubuntu-latest
+    needs: sonarlint
+    steps:
+    - uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public  # Replace with the directory containing your built files
 

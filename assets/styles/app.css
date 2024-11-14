@@ -602,6 +602,10 @@ video {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -1035,73 +1039,6 @@ footer {
   padding: 1.5em;
 }
 
-.weekly-planner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin: 20px 0px 20px 0;
-  padding: 10px;
-  grid-template-areas:
-    "monday tuesday wednesday"
-    "thursday friday saturday"
-    ". sunday .";
-}
-
-.weekly-planner div {
-  padding: 20px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  /* height: 600px; */
-  transition: transform 0.3s ease;
-}
-
-.weekly-planner div:hover {
-  animation: wiggle 1s ease-in-out;
-  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.weekly-planner h3 {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
-}
-
-.weekly-planner select {
-  background-color: var(--secondary-btn-color);
-  color: var(--primary-text-color);
-  border-radius: 8px;
-  padding: 10px 0;
-  margin: 10px 0 5px 25px;
-}
-
-.weekly-planner div:nth-child(1) {
-  grid-area: monday;
-}
-
-.weekly-planner div:nth-child(2) {
-  grid-area: tuesday;
-}
-
-.weekly-planner div:nth-child(3) {
-  grid-area: wednesday;
-}
-
-.weekly-planner div:nth-child(4) {
-  grid-area: thursday;
-}
-
-.weekly-planner div:nth-child(5) {
-  grid-area: friday;
-}
-
-.weekly-planner div:nth-child(6) {
-  grid-area: saturday;
-}
-
-.weekly-planner div:nth-child(7) {
-  grid-area: sunday;
-}
-
 @keyframes wiggle {
   0% {
     transform: rotate(0deg);
@@ -1160,6 +1097,10 @@ footer {
     display: flex;
   }
 
+  .md\:grid-cols-\[2fr_2fr_1fr\] {
+    grid-template-columns: 2fr 2fr 1fr;
+  }
+
   .md\:items-center {
     align-items: center;
   }
@@ -1204,4 +1145,5 @@ footer {
     line-height: 2rem;
   }
 }
+
 

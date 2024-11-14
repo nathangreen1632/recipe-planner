@@ -11,8 +11,9 @@
     }
 
     .weekly-planner {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      grid-template-columns: repeat((minmax(3, 1fr)));
       gap: 16px;
       justify-content: center;
     }
@@ -70,7 +71,7 @@
       <p class="instructions italic">Distribute meals across the 7-day calendar</p>
     </section>
 
-    <section class="weekly-planner mt-8">
+    <section class="weekly-planner grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr] lg:grid-cols-[repeat(3, 1fr)] xl:grid-cols-[repeat(3, 1fr)] xl:grid-rows-[repeat(2, auto) auto] mt-8">
       <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
         <h3 class="text-lg font-bold">Monday</h3>
         <select id="monday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
@@ -84,42 +85,43 @@
           <option value="default-value">Select an Option</option>
         </select>
       </div>
-
+    
       <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
         <h3 class="text-lg font-bold">Wednesday</h3>
         <select id="wednesday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
           <option value="default-value">Select an Option</option>
         </select>
       </div>
-
+    
       <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
         <h3 class="text-lg font-bold">Thursday</h3>
         <select id="thursday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
           <option value="default-value">Select an Option</option>
         </select>
       </div>
-
+    
       <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
         <h3 class="text-lg font-bold">Friday</h3>
         <select id="friday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
           <option value="default-value">Select an Option</option>
         </select>
       </div>
-
+    
       <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
         <h3 class="text-lg font-bold">Saturday</h3>
-        <select id="saturday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-lg">
+        <select id="saturday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
           <option value="default-value">Select an Option</option>
         </select>
       </div>
-
+    
       <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
         <h3 class="text-lg font-bold">Sunday</h3>
-        <select id="sunday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-lg">
+        <select id="sunday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
           <option value="default-value">Select an Option</option>
         </select>
       </div>
     </section>
+    
 
     <div class="grocery-list-button mt-8 text-center">
       <button class="px-6 py-2 text-lg font-semibold rounded shadow">Generate Grocery List</button>

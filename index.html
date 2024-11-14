@@ -6,96 +6,99 @@
   <title>The Recipe Planner</title>
   <link rel="stylesheet" href="./assets/styles/app.css">
 </head>
-<body class="text-gray-900">
-  <header class="bg-blue-600 text-center text-white shadow-md p-1 md:flex md:justify-between md:items-center">
-      <h1 class="text-4xl font-bold text-center leading-loose md:text-left">The Recipe Planner</h1>
+<body>
+  <header>
+      <h1>The Recipe Planner</h1>
       <nav>
-        <ul class="flex justify-center space-x-4 md:space-x-6">
-          <li><a href="./index.html" class="text-black hover:text-white">Home</a></li>
-          <li><a href="./planner.html" class="text-black hover:text-white">Planner</a></li>
-          <li><a href="./grocery-list.html" class="text-black hover:text-white">Grocery List</a></li>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./planner.html">Planner</a></li>
+          <li><a href="./grocery-list.html">Grocery List</a></li>
         </ul>
+        <!-- <ul>
+          <li><a href="#random-meal-btn">Food Roulette</a></li>
+          <li><a href="#recipe-cards">Recipes</a></li>
+        </ul> -->
       </nav>
   </header>
 
-  <main class="p-4">
+  <main>
     <section class="text-center md:p-4">
       <div class="recipe-generator-container">
-        <h3 class="text-lg md:text-xl lg:text-2xl text-white font-semibold">Not sure what to eat tonight? Play Food Roulette and we'll pick a meal for you!</h3>
-        <button id="random-recipe-btn" class="mt-4 px-6 py-2 bg-green-200 text-black rounded hover:bg-teal-400">Food Roulette</button>
+        <h3>Not sure what to eat tonight? Play Food Roulette and we'll pick a meal for you!</h3>
+        <button id="random-recipe-btn">Food Roulette</button>
       </div>
-    </section>
+      </section>
 
-    <section class="text-center md:p-4">
-        <div id="add-recipe-btn-container">
-          <button id="add-recipe-btn" class="px-6 py-2 bg-green-200 text-black rounded hover:bg-teal-400">+ New Recipe</button>
-        </div>
-
+      <section>
+        <div id="add-recipe-btn-container"><button id="add-recipe-btn">+ New Recipe</button></div>
         <div id="recipe-modal" class="modal hidden">
-          <h2 class="text-xl font-bold">Add a New Recipe</h2>
-          <form id="recipe-form" class="space-y-4">
-            <div class="form-row md:flex md:space-x-4">
+          <h2>Add a New Recipe</h2>
+          <form id="recipe-form">
+            <div class="form-row">
+              <div class="form-column">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" name="recipeName" required>
 
-              <div class="form-column flex-1 space-y-2">
-                <label for="recipe-name" class="block text-black text-left font-medium">Recipe Name:</label>
-                <input type="text" id="recipe-name" name="recipeName" class="w-full border rounded p-2" required>
+                <label for="recipe-description">Description:</label>
+                <textarea id="recipe-description" name="description" required></textarea>
 
-                <label for="recipe-description" class="block text-black text-left font-medium">Description:</label>
-                <textarea id="recipe-description" name="description" class="w-full border rounded p-2" required></textarea>
-
-                <h3 class="text-black text-left font-semibold">Ingredients</h3>
+                <h3>Ingredients</h3>
                 <div id="ingredient-list"></div>
-                <button type="button" id="add-ingredient-btn" class=" text-black text-left hover:text-blue-700">+ Ingredient</button>
-
-                <h3 class="text-black text-left font-semibold">Instructions</h3>
+                <button type="button" id="add-ingredient-btn">+ Ingredient</button>
+                
+                <h3>Instructions</h3>
                 <div id="instruction-list"></div>
-                <button type="button" id="add-instruction-btn" class="text-black text-left hover:text-blue-700">+ Instruction</button>
+                <button type="button" id="add-instruction-btn">+ Instruction</button>
               </div>
 
-              <div class="form-column flex-1 space-y-2">
-                <label for="recipe-image" class="block text-black text-left font-medium">Image URL:</label>
-                <input type="url" id="recipe-image" name="mealImage" class="w-full border rounded p-2" required>
+              <div class="form-column">
+                <label for="recipe-image">Image URL:</label>
+                <input type="url" id="recipe-image" name="mealImage" required>
 
-                <label for="difficulty-level" class="block text-black text-left font-medium">Difficulty Level:</label>
-                <select id="difficulty-level" name="difficultyLevel" class="w-full  border rounded p-2" required>
+                <label for="difficulty-level">Difficulty Level:</label>
+                <select id="difficulty-level" name="difficultyLevel" required>
                   <option value="easy">Easy</option>
                   <option value="medium">Medium</option>
                   <option value="hard">Hard</option>
                 </select>
 
-                <label for="prep-time" class="block text-black text-left font-medium">Prep Time (minutes):</label>
-                <input type="number" id="prep-time" name="prepTime" class="w-full border rounded p-2" required>
+                <label for="prep-time">Prep Time (minutes):</label>
+                <input type="number" id="prep-time" name="prepTime" required>
 
-                <label for="cook-time" class="block text-black text-left font-medium">Cook Time (minutes):</label>
-                <input type="number" id="cook-time" name="cookTime" class="w-full border rounded p-2" required>
+                <label for="cook-time">Cook Time (minutes):</label>
+                <input type="number" id="cook-time" name="cookTime" required>
 
-                <label for="servings" class="block text-black text-left font-medium">Servings:</label>
-                <input type="number" id="servings" name="servings" class="w-full border rounded p-2" required>
+                <label for="servings">Servings:</label>
+                <input type="number" id="servings" name="servings" required>
 
-                <label for="category" class="block text-black text-left font-medium">Category:</label>
-                <select id="category" name="categorySelection" class="w-full border rounded p-2" required>
+                <label for="category">Category:</label>
+                <select id="category" name="categorySelection" required>
                   <option value="appetizer">Appetizer</option>
                   <option value="main">Main course</option>
                   <option value="dessert">Dessert</option>
                 </select>
 
-                <label for="cuisine" class="block text-black text-left font-medium">Cuisine:</label>
-                <input type="text" id="cuisine" name="cuisine" class="w-full border rounded p-2" required>
+                <label for="cuisine">Cuisine:</label>
+                <input type="text" id="cuisine" name="cuisine" required>
 
-                <label for="source" class="block text-black text-left font-medium">Source URL:</label>
-                <input type="url" id="source" name="source" class="w-full border rounded p-2" required>
+                <label for="source">Source URL:</label>
+                <input type="url" id="source" name="source" required>
               </div>
             </div>
-            <button type="submit" class="px-4 py-2 bg-black text-white rounded hover:bg-blue-600">Save Recipe</button>
+          
+            <br>
+            <button type="submit">Save Recipe</button>
           </form>
-          <button type="button" id="close-recipe-modal" class="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Close</button>
+          <button type="button" id="close-recipe-modal">Close</button>
         </div>
-    </section>
+      </section>
 
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4" id="recipe-container"></section>
+    <section class="recipe-page" id="recipe-container">
+</section>
   </main>
 
-  <footer class="bg-blue-600 text-white text-center p-4">
+  <footer>
       <p>Made with ❤️ by:<br>Nathan Green<br>Peter Hintze<br>and<br>Omar Mohammed</p>
   </footer>
 

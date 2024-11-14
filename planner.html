@@ -5,134 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Planner</title>
   <link rel="stylesheet" href="./assets/styles/app.css">
-  <style>
-    body {
-      background-color: #002243;
-    }
-
-    .weekly-planner {
-      display: flex;
-      flex-wrap: wrap;
-      grid-template-columns: repeat((minmax(3, 1fr)));
-      gap: 16px;
-      justify-content: center;
-    }
-
-    .planner-header, .planner-controls, .grocery-list-button {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .planner-controls {
-      background: linear-gradient(135deg, #3b82f6, #60a5fa);
-    }
-
-    .weekly-planner .p-4 {
-      background: linear-gradient(135deg, #4f46e5, #818cf8);
-    }
-
-    .weekly-planner .recipe-selector {
-      max-width: 220px;
-    }
-
-    .meal-button, .grocery-list-button button {
-      background: #bbf7d0;
-      color: black;
-    }
-
-    .meal-button:hover, .grocery-list-button button:hover {
-      background: #bbf7d0;
-    }
-  </style>
 </head>
-<body class="text-gray-900">
-  <header class="bg-blue-600 shadow-md p-4 text-center md:flex md:justify-between md:items-center">
-    <h1 class="text-4xl font-bold text-white">My Planner</h1>
+<body>
+  <header>
+    <h1>My Planner</h1>
     <nav>
-      <ul class="flex justify-center space-x-4 md:space-x-6">
-        <li><a href="./index.html" class="text-black  px-3 py-2 rounded hover:text-white">Home</a></li>
-        <li><a href="./planner.html" class="text-black  px-3 py-2 rounded hover:text-white">Planner</a></li>
-        <li><a href="./grocery-list.html" class="text-black  px-3 py-2 rounded hover:text-white">Grocery List</a></li>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./planner.html">Planner</a></li>
+        <li><a href="./grocery-list.html">Grocery List</a></li>
       </ul>
     </nav>
-  </header>
+</header>
 
-  <main class="p-6">
-    <section class="planner-header text-center bg-blue-600 text-black p-4 mb-6 rounded-lg shadow">
-      <h2 class="text-3xl text-white font-bold">My Planner</h2>
-      <p class="text-lg text-white">Manage your recipes and grocery list</p>
-    </section>
+<!-- Main Planner Content -->
+<main>
+  <!-- Section for Planner Header -->
+  <section class="planner-header">
+    <h2>My Planner</h2>
+    <p>My Recipes | Grocery List</p>
+  </section>
 
-    <section class="planner-controls mt-6 bg-blue-600 text-black p-6 rounded-lg shadow text-center space-y-4">
-      <button class="meal-button px-6 py-2 text-lg font-semibold rounded shadow">Pick My Meals</button>
-      <div class="draggable-recipes bg-gray-200 text-gray-700 p-4 rounded-lg shadow">
-        <p>Drag and drop your favorite recipes here</p>
-      </div>
-      <p class="instructions italic">Distribute meals across the 7-day calendar</p>
-    </section>
-
-    <section class="weekly-planner grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr] lg:grid-cols-[repeat(3, 1fr)] xl:grid-cols-[repeat(3, 1fr)] xl:grid-rows-[repeat(2, auto) auto] mt-8">
-      <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
-        <h3 class="text-lg font-bold">Monday</h3>
-        <select id="monday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
-          <option value="default-value">Select an Option</option>
-        </select>
-      </div>
-
-      <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
-        <h3 class="text-lg font-bold">Tuesday</h3>
-        <select id="tuesday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
-          <option value="default-value">Select an Option</option>
-        </select>
-      </div>
-    
-      <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
-        <h3 class="text-lg font-bold">Wednesday</h3>
-        <select id="wednesday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
-          <option value="default-value">Select an Option</option>
-        </select>
-      </div>
-    
-      <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
-        <h3 class="text-lg font-bold">Thursday</h3>
-        <select id="thursday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
-          <option value="default-value">Select an Option</option>
-        </select>
-      </div>
-    
-      <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
-        <h3 class="text-lg font-bold">Friday</h3>
-        <select id="friday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
-          <option value="default-value">Select an Option</option>
-        </select>
-      </div>
-    
-      <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
-        <h3 class="text-lg font-bold">Saturday</h3>
-        <select id="saturday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
-          <option value="default-value">Select an Option</option>
-        </select>
-      </div>
-    
-      <div class="p-4 rounded-lg shadow flex flex-col items-center text-black">
-        <h3 class="text-lg font-bold">Sunday</h3>
-        <select id="sunday-recipeSelector" class="recipe-selector mt-4 border rounded p-2 bg-teal-400 text-md">
-          <option value="default-value">Select an Option</option>
-        </select>
-      </div>
-    </section>
-    
-
-    <div class="grocery-list-button mt-8 text-center">
-      <button class="px-6 py-2 text-lg font-semibold rounded shadow">Generate Grocery List</button>
+  <!-- Section with Buttons -->
+  <section class="planner-controls">
+    <button class="meal-button">Pick my meals</button>
+    <div class="draggable-recipes">
+      <p>Draggable Recipes</p>
     </div>
-  </main>
+    <p class="instructions">Split 7 days w/ generator within calendar</p>
+  </section>
+
+  <!-- Weekly Planner Section -->
+  <section class="weekly-planner">
+    <div>
+      <h3>Monday</h3>
+      <select id="recipeSelector" class="monday recipe-selector">
+        <option value="default-value">Select an Option</option>
+      </select>
+    </div>
+    
+    
+    <div>
+      <h3>Tuesday</h3>
+      <select id="recipeSelector" class="tuesday recipe-selector">
+        <option value="default-value">Select an Option</option>
+      </select>
+    </div>
+
+    <div>
+      <h3>Wednesday</h3>
+      <select id="recipeSelector" class="wednesday recipe-selector">
+        <option value="default-value">Select an Option</option>
+      </select>
+    </div>
+
+    <div>
+      <h3>Thursday</h3>
+      <select id="recipeSelector" class="thursday recipe-selector">
+        <option value="default-value">Select an Option</option>
+      </select>
+    </div>
+
+    <div>
+      <h3>Friday</h3>
+      <select id="recipeSelector" class="friday recipe-selector">
+        <option value="default-value">Select an Option</option>
+      </select>
+    </div>
+
+    <div>
+      <h3>Saturday</h3>
+      <select id="recipeSelector" class="saturday recipe-selector">
+        <option value="default-value">Select an Option</option>
+      </select>
+    </div>
+
+    <div>
+      <h3>Sunday</h3>
+      <select id="recipeSelector" class="sunday recipe-selector">
+        <option value="default-value">Select an Option</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Generate Grocery List Button -->
+  <div class="grocery-list-button">
+    <button>Generate Grocery List</button>
+  </div>
+</main>
 
   <script type="module" src="./assets/js/planner.js"></script>
 </body>
 </html>
-
-
-
-
-

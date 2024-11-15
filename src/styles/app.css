@@ -253,8 +253,6 @@ footer {
   padding: 1.5em;
 }
 
-
-
 @keyframes wiggle {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(1.25deg); }
@@ -262,5 +260,3 @@ footer {
   75% { transform: rotate(-1.25deg); }
   100% { transform: rotate(0deg); }
 }
-
-

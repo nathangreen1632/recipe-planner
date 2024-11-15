@@ -1,4 +1,5 @@
 export const baseRecipes = [{
+    recipeId: 1,
     recipeName: "Cajun Chicken Pasta",
     description: "This creamy Cajun chicken pasta with bell peppers and mushrooms is easy to make, full of spicy flavor, and ready to eat in 30 minutes. Perfect for busy weeknights!",
     ingredients: [
@@ -34,6 +35,7 @@ export const baseRecipes = [{
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/cajun-chicken-pasta/170412"
 },{
+    recipeId: 2,
     recipeName: "Cheesy Chicken and Rice Bake",
     description: "Cheesy Chicken & Rice Casserole – made in just one pan with a handful of simple ingredients. An easy, delicious dinner the whole family will love!",
     ingredients: [
@@ -61,6 +63,7 @@ export const baseRecipes = [{
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/cheesy-chicken-and-rice-bake/186192"
 },{
+    recipeId: 3,
     recipeName: "Chicken Tortilla Soup ala Steve",
     description: "About ten years ago, my wife and I enjoyed a terrific bowl of tortilla soup at a cafe perched above the bustling streets of Cabo San Lucas, Mexico. I've been trying to reproduce it ever since; this is fairly close. The secret is in the lime juice, and the freshly made tortilla crisps added at the table.",
     ingredients: [
@@ -100,6 +103,7 @@ export const baseRecipes = [{
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/chicken-tortilla-soup-ala-steve/161821"
 },{
+    recipeId: 4,
     recipeName: "Marinated Steak Flank",
     description: "This is a great marinade for flank steak, my mom got it from a Korean friend when my dad was stationed overseas in the Army 30 years ago.",
     ingredients: [
@@ -137,6 +141,7 @@ export const baseRecipes = [{
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/marinated-flank-steak/164890"
 },{
+    recipeId: 5,
     recipeName: "Pepper Chicken Stir-Fry",
     description: "This is a quick and easy recipe for a stir-fry that has a great sweet and sour flavor. It is a great way to use up leftover chicken.",
     ingredients: [
@@ -175,6 +180,7 @@ export const baseRecipes = [{
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/pepper-chicken-stir-fry/2401177"
 },{
+    recipeId: 6,
     recipeName: "World's Best Lasagna",
     description: "This is a recipe that I have fine tuned to satisfy the sweet and tangy taste that my family loves. Very simple and quick to make.",
     ingredients: [
@@ -221,6 +227,7 @@ export const baseRecipes = [{
     dateAdded: "01/01/2024",
     source: "https://www.bigoven.com/recipe/worlds-best-lasagna/169093"
 },{
+    recipeId: 7,
     recipeName: "Ground Beef Tacos",
     description: "This is a great recipe for authentic Mexican taqueria style ground beef tacos (tacos de carne molida) that your family will love.",
     ingredients: [

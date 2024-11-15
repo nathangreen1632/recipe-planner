@@ -110,7 +110,6 @@ export const baseRecipes = [{
         {ingredientName: "Beef flank steak", quantity: "1", unitOfMeasure: ""},
         {ingredientName: "Kosher Salt", quantity: "To taste", unitOfMeasure: ""},
         {ingredientName: "Coarsely-ground black pepper", quantity: "To taste", unitOfMeasure: ""},
-        {ingredientName: "---Marinade---", quantity: "", unitOfMeasure: ""},
         {ingredientName: "Dry fruity Red Wine", quantity: "1/4", unitOfMeasure: "cup"},
         {ingredientName: "Soy sauce", quantity: "1/4", unitOfMeasure: "cup"},
         {ingredientName: "Olive Oil", quantity: "1/8", unitOfMeasure: "cup"},

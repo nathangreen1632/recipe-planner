@@ -19,8 +19,6 @@ function createRecipeOptions(className) {
 
 createRecipeOptions();
 
-// console.log(allRecipes);
-
 const generateGroceryListBtn = document.getElementById('groceryListBtn');
 
 generateGroceryListBtn.addEventListener('click', () => {
@@ -37,29 +35,50 @@ generateGroceryListBtn.addEventListener('click', () => {
         }
     });
 
-    console.log(selectedRecipes);
+    if (selectedRecipes.length > 0) {
+        const groceryListMap = new Map();
 
-    const groceryListMap = new Map();
+        selectedRecipes.forEach(selectedRecipe => {
+            selectedRecipe.ingredients.forEach(ingredient => {
+                const ingredientKey = `${ingredient.ingredientName}-${ingredient.unitOfMeasure}`;
 
-    selectedRecipes.forEach(selectedRecipe => {
-        selectedRecipe.ingredients.forEach(ingredient => {
-            const ingredientKey = `${ingredient.ingredientName}-${ingredient.unitOfMeasure}`;
-
-            if (groceryListMap.has(ingredientKey)) {
-                groceryListMap.set(ingredientKey, groceryListMap.get(ingredientKey) + parseInt(ingredient.quantity));
-            } else {
-                groceryListMap.set(ingredientKey, parseInt(ingredient.quantity));
-            }
+                if (groceryListMap.has(ingredientKey)) {
+                    groceryListMap.set(ingredientKey, groceryListMap.get(ingredientKey) + parseInt(ingredient.quantity));
+                } else {
+                    groceryListMap.set(ingredientKey, parseInt(ingredient.quantity));
+                }
+            });
         });
-    });
 
-    const groceryList = [];
-    groceryListMap.forEach((quantity, ingredientKey) => {
-        const [ingredientName, unitOfMeasure] = ingredientKey.split('-');
-        groceryList.push({ ingredientName, quantity, unitOfMeasure });
-    });
+        const groceryList = [];
+        groceryListMap.forEach((quantity, ingredientKey) => {
+            const [ingredientName, unitOfMeasure] = ingredientKey.split('-');
+            groceryList.push({ ingredientName, quantity, unitOfMeasure });
+        });
 
-    localStorage.removeItem('groceryListArray');
-    localStorage.setItem('groceryListArray', JSON.stringify(groceryList));
-    console.log(groceryList);
+        localStorage.removeItem('groceryListArray');
+        localStorage.setItem('groceryListArray', JSON.stringify(groceryList));
+
+        const successMessage = document.createElement('div');
+        successMessage.textContent = 'Ingredients added to grocery list successfully!';
+        successMessage.classList.add('success-message');
+
+        const groceryListContainer = groceryListBtn.parentElement;
+        groceryListContainer.appendChild(successMessage);
+
+        setTimeout(() => {
+            successMessage.remove();
+        }, 3000);
+    } else {
+        const errorMessage = document.createElement('div');
+        errorMessage.textContent = 'Please select at least one recipe!';
+        errorMessage.classList.add('error-message');
+
+        const groceryListContainer = groceryListBtn.parentElement;
+        groceryListContainer.appendChild(errorMessage);
+
+        setTimeout(() => {
+            errorMessage.remove();
+        }, 3000);
+    }
 });

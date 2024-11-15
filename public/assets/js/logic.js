@@ -11,7 +11,7 @@ const addInstructionBtn = document.getElementById('add-instruction-btn');
 
 const storedRecipes = localStorage.getItem('recipeArray');
 const parsedRecipes = JSON.parse(storedRecipes) || [];
-export const allRecipes = baseRecipes.concat(parsedRecipes);
+const allRecipes = baseRecipes.concat(parsedRecipes);
 
 const recipeContainer = document.getElementById('recipe-container');
 
@@ -90,10 +90,6 @@ function createIngredientField() {
 
 function parseQuantity(quantityString) {
     const trimmedQuantity = quantityString.trim();
-
-    // if (!trimmedQuantity) {
-    //     return null;
-    // }
 
     const numberOnly = parseFloat(trimmedQuantity);
     if (!isNaN(numberOnly)) {

@@ -126,12 +126,6 @@ addButton.addEventListener('click', () => {
     submitButton.classList.remove('hidden');
 });
 
-cancelButton.addEventListener('click', () => {
-    const ingredientFieldsContainer = document.querySelector('.ingredient-fields');
-    ingredientFieldsContainer.innerHTML = '';
-    submitButton.classList.add('hidden');
-});
-
 addIngredientForm.addEventListener('submit', (event) => {
     event.preventDefault();
 

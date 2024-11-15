@@ -10,7 +10,7 @@
   <header>
     <h1>Grocery List</h1>
     <nav>
-      <ul>
+      <ul class="flex justify-center space-x-4 md:space-x-6">
         <li><a href="./index.html">Home</a></li>
         <li><a href="./planner.html">Planner</a></li>
         <li><a href="./grocery-list.html">Grocery List</a></li>
@@ -42,16 +42,21 @@
   <section class="grocery-list-container">
     <div class="grocery-list-header">
       <h3>List of Groceries</h3>
-      <button class="add-button" aria-label="Add grocery item">+ Add</button>
-      <button class="clear-button" aria-label="Clear grocery list">Clear</button>
+      <button class="add-btn" aria-label="Add grocery item">+ Add</button>
     </div>
     <div class="grocery-list" aria-label="List of groceries">
     </div>
+    <form id= "add-ingredient-form">
+      <div class="ingredient-fields"></div>
+      <button type="submit" class="submit-btn hidden">Submit</button>
+    </form>
+
+    <button class="clear-list-btn" aria-label="Clear grocery list">Clear</button>
   </section>
 </main>
 
 <footer>
-  <p>Made with ❤️ by: Nathan Green and Peter Hintze</p>
+  <p>Made with ❤️ by: Nathan Green, and Peter Hintze</p>
 </footer>
 
 <script src="./assets/js/grocery-list.js"></script>

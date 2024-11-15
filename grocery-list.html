@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery List</title>
+  <link rel="stylesheet" href="./assets/styles/app.css">
+</head>
+<body>
+  <header>
+    <h1>Grocery List</h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./planner.html">Planner</a></li>
+        <li><a href="./grocery-list.html">Grocery List</a></li>
+      </ul>
+    </nav>
+</header>
+<main>
+  <section class="grocery-header">
+    <h2>Grocery List</h2>
+    <p>Propagated by either a single recipe or from the weekly planner</p>
+  </section>
+
+  <!-- Controls for Serving Sizes and List of Groceries -->
+  <section class="grocery-controls">
+    <!-- Serving Sizes Control -->
+    <div class="serving-sizes" aria-label="Serving sizes control">
+      <h3>Serving sizes</h3>
+      <p>Should adjust quantity of grocery items</p>
+    </div>
+
+    <!-- List of Groceries -->
+    <div class="grocery-list" aria-label="List of groceries">
+      <h3>List of Groceries</h3>
+      <button class="add-button" aria-label="Add grocery item">+ Add</button>
+    </div>
+  </section>
+</main>
+
+<script src="./assets/js/grocery-list.js"></script>
+</body>
+</html>

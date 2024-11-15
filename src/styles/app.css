@@ -265,6 +265,15 @@ footer {
   color: var(--primary-background-color);
 }
 
+grocery-list-btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.success-message, .error-message {
+  margin: 10px 0;
+}
+
 /* Grocery List Page Styling */
 .grocery-list-page {
   display: flex;
@@ -274,11 +283,18 @@ footer {
 }
 
 .serving-size-controls {
-  flex: 0 0 25%;
+  display: flex;
+  gap: 1em;
+  align-items: center;
 }
 
-.serving-size-controls h3, .grocery-list-container h3 {
+.serving-size-controls select {
+  color: var(--form-text-color);
+}
+
+.grocery-list-page h3, .grocery-list-container h3 {
   margin: 10px 0;
+  font-size: 1.75em;
 }
 
 .grocery-list-header {
@@ -327,6 +343,7 @@ footer {
 #add-ingredient-form select {
   min-height: 35px;
   border-radius: 5px;
+  color: var(--form-text-color);
 }
 
 .add-btn, .clear-list-btn {

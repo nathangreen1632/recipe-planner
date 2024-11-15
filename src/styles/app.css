@@ -31,6 +31,16 @@ body {
   overflow-x: hidden;
 }
 
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+header h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
 nav ul {
   display: flex;
   justify-content: center;
@@ -62,16 +72,13 @@ button:hover {
   box-shadow: 0 0 10px 0 #09090b;
 }
 
+/* Homepage Styling */
 .recipe-generator-container {
   background-color: var(--recipe-card-color);
   color: var();
   border-radius: 5px;
   padding: 5px 10px;
   margin: 10px 15px;
-}
-
-.recipe-generator-container h3 {
-  font-size: 1.5em;
 }
 
 #random-recipe-btn {
@@ -202,12 +209,11 @@ button:hover {
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  min-width: 350px;
   max-width: 500px;
 }
 
 .recipe-card h3 {
-  font-size: 1.5em;
-  font-weight: bold;
   text-align: center;
 }
 
@@ -251,6 +257,39 @@ button:hover {
 footer {
   text-align: center;
   padding: 1.5em;
+}
+
+/* Grocery List Page Styling */
+.grocery-list-page {
+  display: flex;
+  justify-content: space-around;
+  gap: 25%;
+  margin: 20px;
+}
+
+.serving-size-controls {
+  flex: 0 0 25%;
+}
+
+.serving-size-controls h3, .grocery-list-container h3 {
+  margin: 10px 0;
+}
+
+.grocery-list-container {
+  flex: 1;
+  background-color: var(--recipe-card-color);
+  color: var(--recipe-card-font-color);
+  border-radius: 8px;
+  padding: 10px 0 10px 20px;
+  margin: 0 20px;
+}
+
+.grocery-list-container button {
+  margin: 10px 5px;
+}
+
+.grocery-list li {
+  list-style-type: none;
 }
 
 @keyframes wiggle {

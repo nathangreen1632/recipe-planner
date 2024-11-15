@@ -17,27 +17,28 @@
       </ul>
     </nav>
 </header>
-<main>
-  <section class="grocery-header">
-    <h2>Grocery List</h2>
-    <p>Propagated by either a single recipe or from the weekly planner</p>
-  </section>
 
-  <!-- Controls for Serving Sizes and List of Groceries -->
-  <section class="grocery-controls">
-    <!-- Serving Sizes Control -->
-    <div class="serving-sizes" aria-label="Serving sizes control">
-      <h3>Serving sizes</h3>
-      <p>Should adjust quantity of grocery items</p>
-    </div>
+<main class="grocery-list-page">
+  <aside class="serving-size-controls">
+    <h3>Serving sizes</h3>
+    <label for="serving-size">Serving Size:</label>
+    <input type="number" id="serving-size" name="servingSize" min="1" value="1">
+  </aside>
 
-    <!-- List of Groceries -->
-    <div class="grocery-list" aria-label="List of groceries">
+  <section class="grocery-list-container">
+    <div class="grocery-list-header">
       <h3>List of Groceries</h3>
       <button class="add-button" aria-label="Add grocery item">+ Add</button>
+      <button class="clear-button" aria-label="Clear grocery list">Clear</button>
+    </div>
+    <div class="grocery-list" aria-label="List of groceries">
     </div>
   </section>
 </main>
+
+<footer>
+  <p>Made with ❤️ by: Nathan Green, Peter Hintze, and, Omar Mohammed</p>
+</footer>
 
 <script src="./assets/js/grocery-list.js"></script>
 </body>

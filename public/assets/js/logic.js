@@ -11,7 +11,7 @@ const addInstructionBtn = document.getElementById('add-instruction-btn');
 
 const storedRecipes = localStorage.getItem('recipeArray');
 const parsedRecipes = JSON.parse(storedRecipes) || [];
-export const allRecipes = [...baseRecipes, ...parsedRecipes];
+export const allRecipes = baseRecipes.concat(parsedRecipes);
 
 const recipeContainer = document.getElementById('recipe-container');
 
@@ -91,9 +91,9 @@ function createIngredientField() {
 function parseQuantity(quantityString) {
     const trimmedQuantity = quantityString.trim();
 
-    if (!trimmedQuantity) {
-        return null;
-    }
+    // if (!trimmedQuantity) {
+    //     return null;
+    // }
 
     const numberOnly = parseFloat(trimmedQuantity);
     if (!isNaN(numberOnly)) {
@@ -225,6 +225,13 @@ recipeForm.addEventListener('submit', (event) => {
     });
 
     newRecipe.totalTime = parseInt(newRecipe.prepTime) + parseInt(newRecipe.cookTime);
+
+    let nextRecipeId = 1;
+    allRecipes.forEach(recipe => {
+        nextRecipeId = Math.max(nextRecipeId, recipe.recipeId || 0);
+    });
+
+    newRecipe.recipeId = nextRecipeId + 1;
 
     let recipeArray = JSON.parse(localStorage.getItem('recipeArray')) || [];
 

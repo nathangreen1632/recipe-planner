@@ -154,14 +154,14 @@ function createIngredientField() {
   ingredientItem.appendChild(quantityInput);
   ingredientItem.appendChild(unitOfMeasureSelect);
   ingredientItem.appendChild(ingredientNameInput);
-  
+
   const removeButton = document.createElement('button');
   removeButton.textContent = 'Remove';
   removeButton.addEventListener('click', () => {
       ingredientItem.remove();
       submitButton.classList.add('hidden');
   });
-  
+
   ingredientItem.appendChild(removeButton);
 
   const ingredientFieldsContainer = document.querySelector('.ingredient-fields');
@@ -175,7 +175,7 @@ function parseQuantity(quantityString) {
   if (!isNaN(numberOnly)) {
       return numberOnly;
   }
-  
+
   const fractionMatch = quantityString.match(/(\d+)\/(\d+)/);
   if (fractionMatch) {
       const numerator = parseInt(fractionMatch[1]);

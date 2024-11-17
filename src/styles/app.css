@@ -9,15 +9,16 @@
 }
 
 :root {
-  --primary-background-color: #194562;
-  --primary-text-color: #f8fafc;
-  --primary-btn-color: #996420;
-  --primary-btn-hover-color: #E4B273;
+  --primary-background-color: #2C666E;
+  --primary-text-color: #F0EDEE;
+  --primary-btn-color: #0A090C;
+  --primary-btn-hover-color: #90DDF0;
   --form-text-color: #3c76a2;
-  --recipe-card-color: #4E7792;
+  --recipe-card-color: #07393C;
   --recipe-card-font-color: #ffffff;
   --recipe-card-btn-color: #bbf7d0;
-  --recipe-card-btn-hover-color: #76B3E6;
+  --recipe-card-btn-hover-color: #90DDF0;
+  --reciep-card-text-hover-color: #333333;
 }
 
 body {
@@ -57,6 +58,7 @@ nav ul li {
 
 nav ul li:hover {
   background-color: var(--primary-btn-hover-color);
+  color: var(--reciep-card-text-hover-color);
   box-shadow: 0 0 10px 0 #7dd3fc;
 }
 
@@ -69,6 +71,7 @@ button {
 
 button:hover {
   background-color: var(--primary-btn-hover-color);
+  color: var(--reciep-card-text-hover-color);
   box-shadow: 0 0 10px 0 #7dd3fc;
 }
 
@@ -228,7 +231,7 @@ button:hover {
 }
 
 .recipe-card a {
-  color: #0437ad;
+  color: #A59079;
   text-decoration: underline;
 }
 

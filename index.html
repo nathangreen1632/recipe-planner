@@ -9,13 +9,11 @@
 <body>
   <header class="homepage-header">
       <h1>The Recipe Planner</h1>
-      <nav>
-        <ul class="flex justify-center space-x-4 md:space-x-6">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./planner.html">Planner</a></li>
-          <li><a href="./grocery-list.html">Grocery List</a></li>
-        </ul>
-      </nav>
+      <nav class="flex justify-center space-x-4 md:space-x-6">
+        <a href="./index.html"><button>Home</button></a>
+        <a href="./planner.html"><button>Planner</button></a>
+        <a href="./grocery-list.html"><button>Grocery List</button></a>
+    </nav>
   </header>
 
   <main>
@@ -50,6 +48,7 @@
                 <h3>Instructions</h3>
                 <div id="instruction-list"></div>
                 <button type="button" id="add-instruction-btn">+ Instruction</button>
+                <button type="submit" id="save-recipe">Save Recipe</button>
               </div>
 
               <div id="recipe-form-additional">
@@ -86,8 +85,6 @@
                 <input type="url" id="source" name="source" required>
               </div>
             </form>
-          <button type="submit">Save Recipe</button>
-          <button type="button" id="close-recipe-modal">Close</button>
         </div>
     </section>
 

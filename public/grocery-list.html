@@ -14,49 +14,53 @@
         <a href="./planner.html"><button>Planner</button></a>
         <a href="./grocery-list.html"><button>Grocery List</button></a>
     </nav>
-</header>
+  </header>
 
-<main class="grocery-list-page">
-  <aside>
-    <h3>Serving sizes</h3>
-    <div class="serving-size-controls">
-      <label for="servingSize">Serving Size:</label>
-      <select id="servingSize">
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-      <button id="toMetric">Metric</button>
-      <button id="toImperial">Imperial</button>
-    </div>
-  </aside>
+  <main class="grocery-list-page">
+    <aside>
+      <h3>Serving sizes</h3>
+      <div class="serving-size-controls">
+        <label for="servingSize"></label>
+        <select id="servingSize"
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <div>
+        <button id="toMetric">Metric</button>
+        <button id="toImperial">Imperial</button>
+        <div><button id="clearList">Clear Grocery List</button></div>
+        </div>
+      </div>
+    </aside>
 
-  <section class="grocery-list-container">
-    <div class="grocery-list-header">
-      <h3>List of Groceries</h3>
-      <button class="add-btn" aria-label="Add grocery item">+ Add</button>
-    </div>
-    <div class="grocery-list" aria-label="List of groceries">
-    </div>
-    <form id= "add-ingredient-form">
-      <div class="ingredient-fields"></div>
-      <button type="submit" class="submit-btn hidden">Submit</button>
-    </form>
+    <section class="grocery-list-container">
+      <div class="grocery-list-header">
+        <h3>List of Groceries</h3>
+        <button class="add-btn">+ Add</button>
+      </div>
+      <div class="grocery-list"></div>
+      <ul id="ingredientList"></ul> <!-- Dynamic grocery list -->
+      <form id="add-ingredient-form">
+        <div class="ingredient-fields"></div>
+        <button type="submit" class="submit-btn hidden">Submit</button>
+      </form>
 
-    <button class="clear-list-btn" aria-label="Clear grocery list">Clear</button>
-  </section>
-</main>
+      <button class="clear-list-btn">Clear</button>
+    </section>
+  </main>
 
-<footer>
-  <p>Made with ❤️ by: Nathan Green, and Peter Hintze</p>
-</footer>
+  <footer>
+    <p>Made with ❤️ by: Nathan Green and Peter Hintze</p>
+    <p><a href="https://github.com/nathangreen1632/recipe-planner">|| Repo Link ||</a></p>
+  </footer>
 
-<script src="./assets/js/grocery-list.js"></script>
+  <script src="./assets/js/grocery-list.js"></script>
 </body>
 </html>

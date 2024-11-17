@@ -11,10 +11,10 @@
 :root {
   --primary-background-color: #194562;
   --primary-text-color: #f8fafc;
-  --primary-btn-color: #996420;
+  --primary-btn-color: #92411C;
   --primary-btn-hover-color: #E4B273;
   --form-text-color: #3c76a2;
-  --recipe-card-color: #4E7792;
+  --recipe-card-color: #3A5A6E;
   --recipe-card-font-color: #ffffff;
   --recipe-card-btn-color: #bbf7d0;
   --recipe-card-btn-hover-color: #76B3E6;
@@ -43,23 +43,6 @@ h3 {
   font-size: 1.25em;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  gap: .5em;
-}
-
-nav ul li {
-  background-color: var(--primary-btn-color);
-  padding: 8px 15px;
-  border-radius: 8px;
-}
-
-nav ul li:hover {
-  background-color: var(--primary-btn-hover-color);
-  box-shadow: 0 0 10px 0 #7dd3fc;
-}
-
 button {
   background-color: var(--primary-btn-color);
   color: var(--primary-text-color);
@@ -72,6 +55,11 @@ button:hover {
   box-shadow: 0 0 10px 0 #7dd3fc;
 }
 
+nav button {
+  margin: 0 3px;
+  padding: 8px 15px;
+}
+
 /* Homepage Styling */
 .recipe-generator-container {
   background-color: var(--recipe-card-color);
@@ -81,8 +69,8 @@ button:hover {
   margin: 10px 15px;
 }
 
-#random-recipe-btn {
-  margin: 1em;
+.recipe-generator-container button {
+  margin: 10px;
 }
 
 #add-recipe-btn-container {
@@ -94,6 +82,11 @@ button:hover {
 #add-recipe-btn-container h2 {
   font-size: 2em;
   margin: 0 0 0 20px;
+}
+
+#add-recipe-btn-container button {
+  padding: 0 15px;
+  margin: 0 20px;
 }
 
 #recipe-modal {
@@ -177,6 +170,11 @@ button:hover {
   min-width: 110px;
 }
 
+#save-recipe {
+  margin: 250px 0 0 50px;
+  width: 50%;
+}
+
 #recipe-container {
   display: flex;
   flex-wrap: wrap;
@@ -228,7 +226,6 @@ button:hover {
 }
 
 .recipe-card a {
-  color: #0437ad;
   text-decoration: underline;
 }
 
@@ -257,6 +254,8 @@ footer {
 
 .weekly-planner div {
   background: linear-gradient(45deg, var(--recipe-card-color), var(--primary-btn-color));
+  flex: 1 0 30%;
+  text-align: center;
   border-radius: 5px;
   padding: 15px 25px;
 }

@@ -67,6 +67,7 @@ Our goal was to develop a tool that not only meets the technical requirements of
 ### Built With
 
 * [![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)](https://www.openai.com)
+* [![Google Gemini](https://img.shields.io/badge/Google%20Gemini-886FBF?style=for-the-badge&logo=googlegemini&logoColor=white)](https://gemini.google.com/)
 * [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.com/html5)
 * [![CSS 3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3schools.com/css/css_intro.asp)
 * [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
@@ -122,10 +123,12 @@ By following these steps, you will be prepared to work with the repository and c
    ```
 ### Get Running
 
-1. When the repo has been cloned and opened in your IDE, open Terminal and run:
+When the repo has been cloned and opened in your IDE, open Terminal and run, which will run the build command one time and process your CSS.
 ```sh
   npm run build-css
 ```
+
+This will setup npm to watch your source app.css file for changes. Everytime you make a change, build-css will run and process your CSS changes. Use ctrl+C to cancel the watch-css job in terminal.
 ```sh
   npm run watch-css
 ```
@@ -174,18 +177,19 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Peter Hintze - [@coder-guy-peter](https://github.com/coder-guy-pete) - hintze.peter@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Nathan Green - [@nathangreen1632](https://github.com/nathangreen1632) - email@email_client.com
+
+Project Link: [https://github.com/nathangreen1632/recipe-planner](https://github.com/nathangreen1632/recipe-planner)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Latisha McNeel](https://github.com/lmcneel) for supporting us and providing us with a [Tailwind-html-template](https://github.com/lmcneel/tailwind-html-template)
+* Jason Xie for helping us work through our JS logic
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

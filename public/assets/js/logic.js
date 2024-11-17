@@ -2,7 +2,6 @@ import { baseRecipes } from './data.js';
 
 const addRecipeBtn = document.getElementById('add-recipe-btn');
 const recipeModal = document.getElementById('recipe-modal');
-const closeRecipeModal = document.getElementById('close-recipe-modal');
 const recipeForm = document.getElementById('recipe-form');
 const ingredientList = document.getElementById('ingredient-list');
 const addIngredientBtn = document.getElementById('add-ingredient-btn');
@@ -158,10 +157,6 @@ addRecipeBtn.addEventListener('click', () => {
         recipeModal.classList.add('hidden');
         addRecipeBtn.textContent = '+ New Recipe';
     }
-});
-
-closeRecipeModal.addEventListener('click', () => {
-    recipeModal.classList.add('hidden');
 });
 
 addIngredientBtn.addEventListener('click', createIngredientField);

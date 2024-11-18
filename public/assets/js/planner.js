@@ -58,6 +58,9 @@ generateGroceryListBtn.addEventListener('click', () => {
 
         localStorage.removeItem('groceryListArray');
         localStorage.setItem('groceryListArray', JSON.stringify(groceryList));
+        
+        localStorage.removeItem('originalGroceryListArray');
+        localStorage.setItem('originalGroceryListArray', JSON.stringify(groceryList));
 
         const successMessage = document.createElement('div');
         successMessage.textContent = 'Ingredients added to grocery list successfully!';

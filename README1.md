@@ -140,9 +140,14 @@ This will setup npm to watch your source app.css file for changes. Everytime you
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+The following links provide screenshots of the various functionality you will find throughout this application:
+- Add a [new recipe](./public/assets/images/new-recipe.png)
+- [randomly select a recipe](./public/assets/images/random-recipe.png) from your existing recipes
+- [generate a grocery list](./public/assets/images/grocery-list-btn.png) from a single recipe
+- [Plan your meals](./public/assets/images/meal-planner.png) for the week
+- [add a one-off ingredient](./public/assets/images/add-ingredients.png) to your grocery list
+- adjust [serving sizes](./public/assets/images/serving-sizes.png)
+- [convert](./public/assets/images/measurement-controls.png) from imperial to metric and vice-versa
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

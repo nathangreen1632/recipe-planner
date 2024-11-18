@@ -142,12 +142,12 @@ This will setup npm to watch your source app.css file for changes. Everytime you
 
 The following links provide screenshots of the various functionality you will find throughout this application:
 - Add a [new recipe](./public/assets/images/new-recipe.png)
-- [randomly select a recipe](./public/assets/images/random-recipe.png) from your existing recipes
-- [generate a grocery list](./public/assets/images/grocery-list-btn.png) from a single recipe
+- [Randomly select a recipe](./public/assets/images/random-recipe.png) from your existing recipes
+- [Generate a grocery list](./public/assets/images/grocery-list-btn.png) from a single recipe
 - [Plan your meals](./public/assets/images/meal-planner.png) for the week
-- [add a one-off ingredient](./public/assets/images/add-ingredients.png) to your grocery list
-- adjust [serving sizes](./public/assets/images/serving-sizes.png)
-- [convert](./public/assets/images/measurement-controls.png) from imperial to metric and vice-versa
+- [Add a one-off ingredient](./public/assets/images/add-ingredients.png) to your grocery list
+- Adjust [serving sizes](./public/assets/images/serving-sizes.png)
+- [Convert](./public/assets/images/measurement-controls.png) from imperial to metric and vice-versa
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

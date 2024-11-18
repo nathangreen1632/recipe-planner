@@ -815,7 +815,7 @@ nav button {
 }
 
 .recipe-card a {
-  color: #C2C2C2;
+  color: #A59079;
   text-decoration: underline;
 }
 
@@ -939,14 +939,6 @@ grocery-list-btn-container {
 
 .add-btn, .clear-list-btn {
   width: 10%;
-}
-
-.measurement-controls {
-  margin: 10px 0;
-}
-
-.measurement-controls button {
-  margin: 0 5px;
 }
 
 @keyframes wiggle {

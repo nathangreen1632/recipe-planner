@@ -47,18 +47,18 @@ function createIngredientField() {
 
     const unitOptions = [
         {value: '', text: 'none'},
-        {value: 'g', text: 'grams'},
-        {value: 'oz', text: 'ounces'},
-        {value: 'lb', text: 'pounds'},
-        {value: 'cup', text: 'cups'},
-        {value: 'pt', text: 'pints'},
-        {value: 'qt', text: 'quarts'},
-        {value: 'gal', text: 'gallons'},
-        {value: 'fl oz', text: 'fluid ounces'},
-        {value: 'ml', text: 'milliliters'},
-        {value: 'l', text: 'liters'},
-        {value: 'tsp', text: 'teaspoons'},
-        {value: 'tbsp', text: 'tablespoons'},
+        {value: 'grams', text: 'gram'},
+        {value: 'ounces', text: 'oz'},
+        {value: 'pounds', text: 'lbs'},
+        {value: 'cups', text: 'cup'},
+        {value: 'pints', text: 'pt'},
+        {value: 'quarts', text: 'qt'},
+        {value: 'gallons', text: 'gal'},
+        {value: 'fluid ounces', text: 'fl oz'},
+        {value: 'milliliters', text: 'ml'},
+        {value: 'liters', text: 'l'},
+        {value: 'teaspoons', text: 'tsp'},
+        {value: 'tablespoons', text: 'tbsp'},
         {value: 'small', text: 'small'},
         {value: 'medium', text: 'medium'},
         {value: 'large', text: 'large'},
@@ -409,7 +409,7 @@ randomRecipeBtn.addEventListener('click', () => {
 
 function addToGroceryList(recipe) {
     localStorage.removeItem('groceryListArray');
-    localStorage.removeItem('originalGroceryListArray');
+    localStorage.removeItem('recipeServings');
 
     const groceryList = new Set(JSON.parse(localStorage.getItem('groceryListArray')) || []);
 
@@ -417,8 +417,8 @@ function addToGroceryList(recipe) {
     groceryList.add(ingredient);
     });
 
+    localStorage.setItem('recipeServings', recipe.servings);
     localStorage.setItem('groceryListArray', JSON.stringify([...groceryList]));
-    localStorage.setItem('originalGroceryListArray', JSON.stringify([...groceryList]));
     
     console.log('Ingredients added to grocery list:', groceryList);
 }

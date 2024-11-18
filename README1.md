@@ -185,7 +185,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Peter Hintze - [@coder-guy-peter](https://github.com/coder-guy-pete) - hintze.peter@gmail.com
 
-Nathan Green - [@nathangreen1632](https://github.com/nathangreen1632) - email@email_client.com
+Nathan Green - [@nathangreen1632](https://github.com/nathangreen1632) - faux_lucks0v@icloud.com
 
 Project Link: [https://github.com/nathangreen1632/recipe-planner](https://github.com/nathangreen1632/recipe-planner)
 
@@ -218,7 +218,7 @@ Project Link: [https://github.com/nathangreen1632/recipe-planner](https://github
 
 [license-url]: https://github.com/nathangreen1632/recipe-planner/blob/main/LICENSE
 [figma-shield]: https://img.shields.io/badge/Figma_Design-Our_Design-green?style=for-the-badge&logoSize=auto&labelColor=%23595959&color=%232d93b3
-[figma-url]: https://www.figma.com/design/Dd1zy4rIGrqYIi2rzyZ3QC/Figma-basics?node-id=601-9&t=ihzLn7TynaBJrXGf-1
+[figma-url]: https://www.figma.com/design/Dd1zy4rIGrqYIi2rzyZ3QC/Figma-basics?node-id=601-9&t=6cYUzXF2vXpPQmwr-1
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jgreen1632
 

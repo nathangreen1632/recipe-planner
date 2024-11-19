@@ -8,7 +8,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![Figma Design][figma-shield]][figma-url]
+[![Figma Design][figma-shield]](./public/assets/images/Figma-wireframe.png)
 [![LinkedIn][linkedin-shield]][linkedin-url] 
 </div>
 
@@ -218,7 +218,6 @@ Project Link: [https://github.com/nathangreen1632/recipe-planner](https://github
 
 [license-url]: https://github.com/nathangreen1632/recipe-planner/blob/main/LICENSE
 [figma-shield]: https://img.shields.io/badge/Figma_Design-Our_Design-green?style=for-the-badge&logoSize=auto&labelColor=%23595959&color=%232d93b3
-[figma-url]: https://www.figma.com/design/Dd1zy4rIGrqYIi2rzyZ3QC/Figma-basics?node-id=601-9&t=6cYUzXF2vXpPQmwr-1
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jgreen1632
 

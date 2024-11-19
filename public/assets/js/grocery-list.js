@@ -76,17 +76,21 @@ function convertUnits(toMetric, servingSize) {
         let adjustedQuantity = 0;
 
         const quantityString = ingredient.quantity.toString();
-        const fractionMatch = quantityString.match(/(\d+)\/(\d+)/);
+        const mixedUnitMatch = quantityString.match(/^(\d+)(?:\s+)?(\d+\/\d+)?$/);
+        if (mixedUnitMatch) {
+        const wholeNumber = parseInt(mixedUnitMatch[1]);
+        const fractionMatch = mixedUnitMatch[2]; // might be undefined
+
+        adjustedQuantity += wholeNumber;
+
         if (fractionMatch) {
-        const numerator = parseInt(fractionMatch[1]);
-        const denominator = parseInt(fractionMatch[2]);
-        adjustedQuantity += numerator / denominator;
-        } else if (quantityString.includes(' ')) {
-        const [wholeNumber, fractionPart] = quantityString.split(' ');
-        adjustedQuantity += parseInt(wholeNumber) + parseFloat(fractionPart);
-        } else {
-        adjustedQuantity = parseFloat(quantityString);
+            const numerator = parseInt(fractionMatch.split("/")[0]);
+            const denominator = parseInt(fractionMatch.split("/")[1]);
+            adjustedQuantity += numerator / denominator;
         }
+        }  else {
+            adjustedQuantity = parseFloat(quantityString);
+            }
 
         adjustedQuantity *= servingSize /2;
 

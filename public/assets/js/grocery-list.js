@@ -49,7 +49,7 @@ function adjustServingSize() {
         adjustedQuantity += parseInt(wholeNumber) + parseFloat(fractionPart);
         }
 
-        adjustedQuantity *= servingSize / 2; // Assuming original quantities are for 2 servings
+        adjustedQuantity *= servingSize / 2;
 
         adjustedQuantity = adjustedQuantity.toFixed(2);
 
@@ -79,7 +79,7 @@ function convertUnits(toMetric, servingSize) {
         const mixedUnitMatch = quantityString.match(/^(\d+)(?:\s+)?(\d+\/\d+)?$/);
         if (mixedUnitMatch) {
         const wholeNumber = parseInt(mixedUnitMatch[1]);
-        const fractionMatch = mixedUnitMatch[2]; // might be undefined
+        const fractionMatch = mixedUnitMatch[2];
 
         adjustedQuantity += wholeNumber;
 

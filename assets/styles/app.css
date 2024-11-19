@@ -909,6 +909,7 @@ grocery-list-btn-container {
 
 .grocery-list-container button {
   margin: 10px 5px;
+  min-width: 50px;
 }
 
 .grocery-list li {
@@ -988,6 +989,11 @@ grocery-list-btn-container {
 
   #recipe-form input, #recipe-form textarea, #recipe-form select {
     width: 100%;
+  }
+
+  .grocery-list-page {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 

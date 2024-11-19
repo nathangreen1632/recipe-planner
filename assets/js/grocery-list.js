@@ -37,14 +37,15 @@ function adjustServingSize() {
     const updatedIngredients = originalGroceryList.map(ingredient => {
         let adjustedQuantity = parseFloat(ingredient.quantity) || 0;
 
-        const fractionMatch = ingredient.quantity.match(/(\d+)\/(\d+)/);
+        const quantityString = ingredient.quantity.toString();
+        const fractionMatch = quantityString.match(/(\d+)\/(\d+)/);
         if (fractionMatch) {
         const numerator = parseInt(fractionMatch[1]);
         const denominator = parseInt(fractionMatch[2]);
         adjustedQuantity += numerator / denominator;
-        } else if (ingredient.quantity.includes(' ')) {
+        } else if (quantityString.includes(' ')) {
 
-        const [wholeNumber, fractionPart] = ingredient.quantity.split(' ');
+        const [wholeNumber, fractionPart] = quantityString.split(' ');
         adjustedQuantity += parseInt(wholeNumber) + parseFloat(fractionPart);
         }
 
@@ -74,16 +75,17 @@ function convertUnits(toMetric, servingSize) {
     const updatedIngredients = originalIngredients.map(ingredient => {
         let adjustedQuantity = 0;
 
-        const fractionMatch = ingredient.quantity.match(/(\d+)\/(\d+)/);
+        const quantityString = ingredient.quantity.toString();
+        const fractionMatch = quantityString.match(/(\d+)\/(\d+)/);
         if (fractionMatch) {
         const numerator = parseInt(fractionMatch[1]);
         const denominator = parseInt(fractionMatch[2]);
         adjustedQuantity += numerator / denominator;
-        } else if (ingredient.quantity.includes(' ')) {
-        const [wholeNumber, fractionPart] = ingredient.quantity.split(' ');
+        } else if (quantityString.includes(' ')) {
+        const [wholeNumber, fractionPart] = quantityString.split(' ');
         adjustedQuantity += parseInt(wholeNumber) + parseFloat(fractionPart);
         } else {
-        adjustedQuantity = parseFloat(ingredient.quantity);
+        adjustedQuantity = parseFloat(quantityString);
         }
 
         adjustedQuantity *= servingSize /2;
